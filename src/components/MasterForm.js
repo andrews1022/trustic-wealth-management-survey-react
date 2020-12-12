@@ -19,6 +19,8 @@ const MasterForm = () => {
 	const [currentQuestion, setCurrentQuestion] = useState(1);
 	const [isSimpleModalOpen, setIsSimpleModalOpen] = useState(false);
 	const [isIntroductoryCallModalOpen, setIsIntroductoryCallModalOpen] = useState(false);
+	const [simpleModalHeadingText, setSimpleModalHeadingText] = useState('');
+	const [checkedOptions, setCheckedOptions] = useState([]);
 
 	// increment current step
 	const incremenetCurrentStep = () => {
@@ -32,10 +34,35 @@ const MasterForm = () => {
 	};
 
 	// modal functions
-	const openSimpleModal = () => setIsSimpleModalOpen(true);
+	const openSimpleModal = (e) => {
+		const opener = e.target.dataset.simpleModalOpener;
+
+		if (opener === 'nav') {
+			setSimpleModalHeadingText('Sign Up and Stay Informed');
+		} else if (opener === 'intro') {
+			setSimpleModalHeadingText('Download the Survey Results');
+		} else {
+			setSimpleModalHeadingText('Sign Up and Stay Informed');
+		}
+
+		setIsSimpleModalOpen(true);
+	};
 	const closeSimpleModal = () => setIsSimpleModalOpen(false);
 	const openIntroductoryCallModal = () => setIsIntroductoryCallModalOpen(true);
 	const closeIntroductoryCallModal = () => setIsIntroductoryCallModalOpen(false);
+
+	// handle adding/removing clicked options from state array
+	const handleCheckedOptions = (e) => {
+		const elementId = e.target.id;
+
+		if (checkedOptions.indexOf(elementId) !== -1) {
+			// remove if already in array
+			setCheckedOptions(checkedOptions.filter((option) => option !== elementId));
+		} else {
+			// add it otherwise
+			setCheckedOptions(checkedOptions.concat(elementId));
+		}
+	};
 
 	if (currentStep !== 4) {
 		return (
@@ -51,16 +78,28 @@ const MasterForm = () => {
 				/>
 				<Question1
 					currentStep={currentStep}
+					currentQuestion={currentQuestion}
 					onClickHandler={incrementCurrentStepAndCurrentQuestion}
+					handleCheckedOptions={handleCheckedOptions}
 				/>
 				<Question2
 					currentStep={currentStep}
+					currentQuestion={currentQuestion}
 					onClickHandler={incrementCurrentStepAndCurrentQuestion}
+					handleCheckedOptions={handleCheckedOptions}
 				/>
-				<Question3 currentStep={currentStep} onClickHandler={incremenetCurrentStep} />
+				<Question3
+					currentStep={currentStep}
+					currentQuestion={currentQuestion}
+					onClickHandler={incremenetCurrentStep}
+					handleCheckedOptions={handleCheckedOptions}
+				/>
 
-				<SimpleModal isSimpleModalOpen={isSimpleModalOpen} closeSimpleModal={closeSimpleModal} />
-
+				<SimpleModal
+					isSimpleModalOpen={isSimpleModalOpen}
+					closeSimpleModal={closeSimpleModal}
+					simpleModalHeadingText={simpleModalHeadingText}
+				/>
 				<IntroductoryCallModal
 					isIntroductoryCallModalOpen={isIntroductoryCallModalOpen}
 					closeIntroductoryCallModal={closeIntroductoryCallModal}
@@ -68,11 +107,7 @@ const MasterForm = () => {
 			</div>
 		);
 	} else {
-		return (
-			<div className='master-form'>
-				<Results currentStep={currentStep} />
-			</div>
-		);
+		return <Results currentStep={currentStep} checkedOptions={checkedOptions} />;
 	}
 };
 

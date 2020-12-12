@@ -1,5 +1,4 @@
-// introductory call modal shorthand: icm
-.icm {
+.sum {
 	background-color: $white;
 	padding: 2rem;
 	width: 55vw;
@@ -9,8 +8,9 @@
 	}
 
 	&__logo {
-		margin: 0 auto;
-		width: 15rem;
+	}
+
+	&__heading {
 	}
 
 	&__form {
@@ -25,12 +25,6 @@
 	&__input {
 	}
 
-	&__message {
-	}
-
 	&__legal {
-	}
-
-	&__submit {
 	}
 }

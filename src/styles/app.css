@@ -17,6 +17,7 @@ html {
 
 body {
   line-height: 1;
+  font-family: "Lato", sans-serif;
 }
 
 *,
@@ -50,14 +51,46 @@ ul {
   list-style: none;
 }
 
-.introductory-call-modal {
-  width: 20rem;
-  background-color: lightblue;
-  padding: 2rem;
+button,
+input {
+  font-family: "Lato", sans-serif;
 }
 
-.introductory-call-modal:focus {
+.icm {
+  background-color: #fff;
+  padding: 2rem;
+  width: 55vw;
+}
+
+.icm:focus {
   outline: none;
+}
+
+.icm__logo {
+  margin: 0 auto;
+  width: 15rem;
+}
+
+.nav {
+  margin-bottom: 1rem;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__item {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav__item:first-of-type {
+  background-color: lightblue;
+  margin-right: 0.5rem;
+}
+
+.nav__item:last-of-type {
+  background-color: lightcoral;
 }
 
 .ReactModal__Overlay {
@@ -77,13 +110,13 @@ ul {
   opacity: 0;
 }
 
-.sign-up-modal {
-  width: 20rem;
-  background-color: lightblue;
+.sum {
+  background-color: #fff;
   padding: 2rem;
+  width: 55vw;
 }
 
-.sign-up-modal:focus {
+.sum:focus {
   outline: none;
 }
 /*# sourceMappingURL=app.css.map */

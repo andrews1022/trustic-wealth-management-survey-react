@@ -1,0 +1,21 @@
+.nav {
+	margin-bottom: 1rem;
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		cursor: pointer;
+		padding: 0.5rem;
+
+		&:first-of-type {
+			background-color: lightblue;
+			margin-right: 0.5rem;
+		}
+
+		&:last-of-type {
+			background-color: lightcoral;
+		}
+	}
+}

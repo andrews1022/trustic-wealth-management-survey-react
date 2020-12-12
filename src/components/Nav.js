@@ -16,8 +16,8 @@ const Nav = ({ openSimpleModal, openIntroductoryCallModal }) => {
 					<li className='nav__item' onClick={openIntroductoryCallModal}>
 						Book an introductory call
 					</li>
-					<li className='nav__item' onClick={openSimpleModal}>
-						Signup for future retirement insights
+					<li className='nav__item' onClick={openSimpleModal} data-simple-modal-opener='nav'>
+						Sign up for future retirement insights
 					</li>
 				</ul>
 			</motion.nav>

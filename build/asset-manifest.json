@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.7b56cdcd.chunk.css",
-    "main.js": "/static/js/main.a6ccabdf.chunk.js",
-    "main.js.map": "/static/js/main.a6ccabdf.chunk.js.map",
+    "main.css": "/static/css/main.e395c53c.chunk.css",
+    "main.js": "/static/js/main.6c321676.chunk.js",
+    "main.js.map": "/static/js/main.6c321676.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cb4dec02.js",
     "runtime-main.js.map": "/static/js/runtime-main.cb4dec02.js.map",
-    "static/js/2.22a3c536.chunk.js": "/static/js/2.22a3c536.chunk.js",
-    "static/js/2.22a3c536.chunk.js.map": "/static/js/2.22a3c536.chunk.js.map",
+    "static/css/2.1983794b.chunk.css": "/static/css/2.1983794b.chunk.css",
+    "static/js/2.48e74705.chunk.js": "/static/js/2.48e74705.chunk.js",
+    "static/js/2.48e74705.chunk.js.map": "/static/js/2.48e74705.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.7b56cdcd.chunk.css.map": "/static/css/main.7b56cdcd.chunk.css.map",
-    "static/js/2.22a3c536.chunk.js.LICENSE.txt": "/static/js/2.22a3c536.chunk.js.LICENSE.txt"
+    "static/css/2.1983794b.chunk.css.map": "/static/css/2.1983794b.chunk.css.map",
+    "static/css/main.e395c53c.chunk.css.map": "/static/css/main.e395c53c.chunk.css.map",
+    "static/js/2.48e74705.chunk.js.LICENSE.txt": "/static/js/2.48e74705.chunk.js.LICENSE.txt",
+    "static/media/trustic-logo.070286d9.png": "/static/media/trustic-logo.070286d9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.cb4dec02.js",
-    "static/js/2.22a3c536.chunk.js",
-    "static/css/main.7b56cdcd.chunk.css",
-    "static/js/main.a6ccabdf.chunk.js"
+    "static/css/2.1983794b.chunk.css",
+    "static/js/2.48e74705.chunk.js",
+    "static/css/main.e395c53c.chunk.css",
+    "static/js/main.6c321676.chunk.js"
   ]
 }
