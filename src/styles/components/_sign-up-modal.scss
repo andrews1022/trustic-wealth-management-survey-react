@@ -1,0 +1,9 @@
+.sign-up-modal {
+	width: 20rem;
+	background-color: lightblue;
+	padding: 2rem;
+
+	&:focus {
+		outline: none;
+	}
+}

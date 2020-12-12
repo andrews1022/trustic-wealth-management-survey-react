@@ -1,0 +1,18 @@
+.ReactModal {
+	&__Overlay {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(0, 0, 0, 0.75) !important;
+		opacity: 0;
+		transition: $transitionSmoothLong;
+
+		&--after-open {
+			opacity: 1;
+		}
+
+		&--before-close {
+			opacity: 0;
+		}
+	}
+}
