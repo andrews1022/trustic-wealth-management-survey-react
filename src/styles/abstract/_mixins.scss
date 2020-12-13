@@ -1,0 +1,12 @@
+@mixin intro-button-colors($backgroundColor, $borderColor, $hoverBackgroundColor) {
+	background-color: $backgroundColor;
+	border: 2px solid $borderColor;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $hoverBackgroundColor;
+		box-shadow: $subtleBoxShadow;
+		transform: translateY(-0.25rem);
+	}
+}

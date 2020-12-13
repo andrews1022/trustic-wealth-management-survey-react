@@ -21,13 +21,13 @@ const Intro = ({ currentStep, onClickHandler, openSimpleModal }) => {
 						Want to find out what they said now? Download the survey results.
 					</p>
 					<button
-						className='intro__button'
+						className='intro__button intro__button--hollow'
 						onClick={openSimpleModal}
 						data-simple-modal-opener='intro'
 					>
 						Download Survey Results
 					</button>
-					<button className='intro__button' onClick={onClickHandler}>
+					<button className='intro__button intro__button--solid' onClick={onClickHandler}>
 						Start Survey
 					</button>
 				</motion.div>

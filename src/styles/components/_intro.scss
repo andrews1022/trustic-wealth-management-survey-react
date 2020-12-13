@@ -1,0 +1,35 @@
+.intro {
+	&__heading {
+		font-family: $font-playfair;
+		font-size: 3rem;
+		line-height: 1.25;
+		font-weight: 800;
+		color: $gulfBlue;
+	}
+
+	&__copy {
+		color: $gulfBlue;
+		font-size: 1.5rem;
+		line-height: 1.25;
+		margin: 4% 0 7.5% 0;
+	}
+
+	&__button {
+		border: none;
+		color: $gulfBlue;
+		cursor: pointer;
+		font-size: 1.25rem;
+		font-weight: 600;
+		padding: 1rem 2rem;
+		transition: $transitionSmoothShort;
+
+		&--hollow {
+			@include intro-button-colors($white, $supernova, $supernova);
+			margin-right: 1.5rem;
+		}
+
+		&--solid {
+			@include intro-button-colors($supernova, transparent, darken($supernova, 10%));
+		}
+	}
+}

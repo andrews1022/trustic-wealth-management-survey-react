@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.e395c53c.chunk.css",
-    "main.js": "/static/js/main.6c321676.chunk.js",
-    "main.js.map": "/static/js/main.6c321676.chunk.js.map",
+    "main.css": "/static/css/main.2786085e.chunk.css",
+    "main.js": "/static/js/main.e3eb2bd0.chunk.js",
+    "main.js.map": "/static/js/main.e3eb2bd0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cb4dec02.js",
     "runtime-main.js.map": "/static/js/runtime-main.cb4dec02.js.map",
     "static/css/2.1983794b.chunk.css": "/static/css/2.1983794b.chunk.css",
@@ -10,15 +10,17 @@
     "static/js/2.48e74705.chunk.js.map": "/static/js/2.48e74705.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.1983794b.chunk.css.map": "/static/css/2.1983794b.chunk.css.map",
-    "static/css/main.e395c53c.chunk.css.map": "/static/css/main.e395c53c.chunk.css.map",
+    "static/css/main.2786085e.chunk.css.map": "/static/css/main.2786085e.chunk.css.map",
     "static/js/2.48e74705.chunk.js.LICENSE.txt": "/static/js/2.48e74705.chunk.js.LICENSE.txt",
+    "static/media/intro.46d7d166.svg": "/static/media/intro.46d7d166.svg",
+    "static/media/question.d0489cbc.svg": "/static/media/question.d0489cbc.svg",
     "static/media/trustic-logo.070286d9.png": "/static/media/trustic-logo.070286d9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.cb4dec02.js",
     "static/css/2.1983794b.chunk.css",
     "static/js/2.48e74705.chunk.js",
-    "static/css/main.e395c53c.chunk.css",
-    "static/js/main.6c321676.chunk.js"
+    "static/css/main.2786085e.chunk.css",
+    "static/js/main.e3eb2bd0.chunk.js"
   ]
 }
