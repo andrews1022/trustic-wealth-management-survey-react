@@ -56,6 +56,20 @@ input {
   font-family: "Lato", sans-serif;
 }
 
+.intro__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.intro__box:first-of-type {
+  flex: 0 0 40%;
+}
+
+.intro__box:last-of-type {
+  flex: 0 0 50%;
+}
+
 .intro__heading {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
@@ -73,6 +87,7 @@ input {
 
 .intro__button {
   border: none;
+  border-radius: 3rem;
   color: #384160;
   cursor: pointer;
   font-size: 1.25rem;
@@ -104,6 +119,17 @@ input {
   transform: translateY(-0.25rem);
 }
 
+.intro__button:focus {
+  outline: none;
+}
+
+.intro__svg path[fill='#4834ae'],
+.intro__svg rect[fill='#4834ae'],
+.intro__svg circle[fill='#4834ae'] {
+  fill: #4834ae;
+  transition: all 1000ms ease-in-out;
+}
+
 .icm {
   background-color: #fff;
   padding: 2rem;
@@ -125,9 +151,6 @@ input {
 }
 
 .master-form__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -135,18 +158,10 @@ input {
   width: 90%;
 }
 
-.master-form__inner div {
-  flex: 0 0 40%;
-}
-
-.master-form__inner svg {
-  flex: 0 0 50%;
-}
-
 .nav {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5%;
+  right: 5%;
 }
 
 .nav__list {
@@ -154,17 +169,150 @@ input {
 }
 
 .nav__item {
+  border-radius: 3rem;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  transition: all 175ms ease-in-out;
 }
 
 .nav__item:first-of-type {
-  background-color: lightgreen;
   margin-right: 0.5rem;
 }
 
-.nav__item:last-of-type {
-  background-color: lightcoral;
+.nav__item:hover {
+  background-color: #2d5ca7;
+  color: #eee;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.25rem);
+}
+
+.question--1 .question__heading {
+  color: #4834ae;
+}
+
+.question--1 .question__svg path[fill='#6c63ff'],
+.question--1 .question__svg rect[fill='#6c63ff'],
+.question--1 .question__svg circle[fill='#6c63ff'] {
+  fill: #20a08b;
+}
+
+.question--1 .question__button {
+  background-color: transparent;
+  border: 2px solid #fcb332;
+  color: #fcb332;
+}
+
+.question--1 .question__button:hover, .question--1 .question__button:active, .question--1 .question__button:focus {
+  background-color: #fcb332;
+  color: #eee;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.25rem);
+}
+
+.question--2 .question__heading {
+  color: #20a08b;
+}
+
+.question--2 .question__svg path[fill='#6c63ff'],
+.question--2 .question__svg rect[fill='#6c63ff'],
+.question--2 .question__svg circle[fill='#6c63ff'] {
+  fill: #fcb332;
+}
+
+.question--2 .question__button {
+  background-color: transparent;
+  border: 2px solid #4834ae;
+  color: #4834ae;
+}
+
+.question--2 .question__button:hover, .question--2 .question__button:active, .question--2 .question__button:focus {
+  background-color: #4834ae;
+  color: #eee;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.25rem);
+}
+
+.question--3 .question__heading {
+  color: #fcb332;
+}
+
+.question--3 .question__svg path[fill='#6c63ff'],
+.question--3 .question__svg rect[fill='#6c63ff'],
+.question--3 .question__svg circle[fill='#6c63ff'] {
+  fill: #4834ae;
+}
+
+.question--3 .question__button {
+  background-color: transparent;
+  border: 2px solid #20a08b;
+  color: #20a08b;
+}
+
+.question--3 .question__button:hover, .question--3 .question__button:active, .question--3 .question__button:focus {
+  background-color: #20a08b;
+  color: #eee;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.25rem);
+}
+
+.question__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question__box:first-of-type {
+  flex: 0 0 47.5%;
+}
+
+.question__box:last-of-type {
+  flex: 0 0 50%;
+}
+
+.question__heading {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.question__list {
+  display: flex;
+  flex-wrap: wrap;
+  color: #384160;
+  margin: 3.5% 0 7.5% 0;
+}
+
+.question__item {
+  display: flex;
+  align-items: center;
+  flex: 1 1 50%;
+  margin-bottom: 0.625rem;
+}
+
+.question__checkbox {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.375rem;
+}
+
+.question__label {
+  font-size: 1.125rem;
+  color: #384160;
+}
+
+.question__button {
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  transition: all 175ms ease-in-out;
+}
+
+.question__button:focus {
+  outline: none;
 }
 
 .ReactModal__Overlay {
@@ -182,6 +330,15 @@ input {
 
 .ReactModal__Overlay--before-close {
   opacity: 0;
+}
+
+.results {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.results__hero-text {
+  text-align: center;
 }
 
 .sum {

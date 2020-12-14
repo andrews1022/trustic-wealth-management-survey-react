@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 // components
 import Nav from './Nav';
@@ -14,10 +13,6 @@ import Results from './steps/Results';
 // modals
 import IntroductoryCallModal from './modals/IntroductoryCallModal';
 import SimpleModal from './modals/SimpleModal';
-
-// import svgs
-import { ReactComponent as IntroSVG } from './../images/intro.svg';
-import { ReactComponent as QuestionSVG } from './../images/question.svg';
 
 const MasterForm = () => {
 	const [currentStep, setCurrentStep] = useState(0);
@@ -101,8 +96,6 @@ const MasterForm = () => {
 						onClickHandler={incremenetCurrentStep}
 						handleCheckedOptions={handleCheckedOptions}
 					/>
-
-					{currentStep === 0 ? <IntroSVG /> : <QuestionSVG />}
 				</div>
 
 				<SimpleModal

@@ -1,4 +1,20 @@
 .intro {
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__box {
+		&:first-of-type {
+			flex: 0 0 40%;
+		}
+
+		&:last-of-type {
+			flex: 0 0 50%;
+		}
+	}
+
 	&__heading {
 		font-family: $font-playfair;
 		font-size: 3rem;
@@ -16,6 +32,7 @@
 
 	&__button {
 		border: none;
+		border-radius: 3rem;
 		color: $gulfBlue;
 		cursor: pointer;
 		font-size: 1.25rem;
@@ -30,6 +47,19 @@
 
 		&--solid {
 			@include intro-button-colors($supernova, transparent, darken($supernova, 10%));
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__svg {
+		path[fill='#4834ae'],
+		rect[fill='#4834ae'],
+		circle[fill='#4834ae'] {
+			fill: $purpleHeart;
+			transition: $transitionSmoothExtraLong;
 		}
 	}
 }

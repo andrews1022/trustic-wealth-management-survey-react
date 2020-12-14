@@ -3,28 +3,10 @@
 	position: relative;
 
 	&__inner {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 90%;
-
-		div {
-			flex: 0 0 40%;
-		}
-
-		svg {
-			flex: 0 0 50%;
-
-			// path[fill='#4834ae'],
-			// rect[fill='#4834ae'],
-			// circle[fill='#4834ae'] {
-			// 	fill: blue;
-			// 	transition: $transitionSmoothLong; // smoother transitioning of colours
-			// }
-		}
 	}
 }

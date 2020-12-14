@@ -1,23 +1,30 @@
 .nav {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 5%;
+	right: 5%;
 
 	&__list {
 		display: flex;
 	}
 
 	&__item {
+		border-radius: 3rem;
 		cursor: pointer;
-		padding: 0.5rem;
+		padding: 0.75rem 1.25rem;
+		transition: $transitionSmoothShort;
 
 		&:first-of-type {
-			background-color: lightgreen;
 			margin-right: 0.5rem;
 		}
 
 		&:last-of-type {
-			background-color: lightcoral;
+		}
+
+		&:hover {
+			background-color: $lochmara;
+			color: $whiteSmoke;
+			box-shadow: $subtleBoxShadow;
+			transform: translateY(-0.25rem);
 		}
 	}
 }
