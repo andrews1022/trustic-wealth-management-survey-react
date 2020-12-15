@@ -16,11 +16,11 @@
 	}
 
 	&__heading {
-		font-family: $font-playfair;
-		font-size: 3rem;
-		line-height: 1.25;
-		font-weight: 800;
 		color: $gulfBlue;
+		font-family: $fontPlayfair;
+		font-size: 3rem;
+		font-weight: 800;
+		line-height: 1.25;
 	}
 
 	&__copy {
@@ -47,10 +47,6 @@
 
 		&--solid {
 			@include intro-button-colors($supernova, transparent, darken($supernova, 10%));
-		}
-
-		&:focus {
-			outline: none;
 		}
 	}
 

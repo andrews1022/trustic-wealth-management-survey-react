@@ -34,7 +34,7 @@ const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryC
 			className='icm' // introductory call modal shorthand: icm
 		>
 			<img className='icm__logo' src={Logo} alt='Trustic Logo' />
-			<form action='icm__form'>
+			<form className='icm__form' action=''>
 				<div className='icm__form-group'>
 					<label className='icm__label' htmlFor='advisor'>
 						Meeting with

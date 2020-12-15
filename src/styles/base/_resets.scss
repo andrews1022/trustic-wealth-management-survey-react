@@ -13,7 +13,7 @@ html {
 
 body {
 	line-height: 1;
-	font-family: $font-lato;
+	font-family: $fontLato;
 }
 
 *,
@@ -53,5 +53,9 @@ ul {
 
 button,
 input {
-	font-family: $font-lato;
+	font-family: $fontLato;
+}
+
+button:focus {
+	outline: none;
 }

@@ -1,0 +1,50 @@
+.footer {
+	background-color: $whiteSmoke;
+	margin-top: 4.25%;
+	padding: 1.5% 0;
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__box {
+		&:first-of-type {
+			margin-right: 5%;
+		}
+
+		&:last-of-type {
+			margin-left: 5%;
+		}
+	}
+
+	&__logo {
+		width: 13rem;
+	}
+
+	&__button {
+		border: none;
+		border-radius: 3rem;
+		color: $gulfBlue;
+		cursor: pointer;
+		font-size: 1.125rem;
+		font-weight: 600;
+		padding: 0.5rem 1.25rem;
+		transition: $transitionSmoothShort;
+
+		&--hollow {
+			@include intro-button-colors(transparent, $supernova, $supernova);
+			margin-right: 1.25rem;
+		}
+
+		&--solid {
+			@include intro-button-colors($supernova, transparent, darken($supernova, 10%));
+		}
+	}
+
+	&__icon {
+		font-size: 1.375rem;
+		margin-right: 0.75rem;
+	}
+}

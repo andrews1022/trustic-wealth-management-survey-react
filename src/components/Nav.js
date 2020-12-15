@@ -9,7 +9,7 @@ const Nav = ({ openSimpleModal, openIntroductoryCallModal }) => {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				transition={{ duration: 1 }}
+				transition={{ duration: 1.5 }}
 				className='nav'
 			>
 				<ul className='nav__list'>

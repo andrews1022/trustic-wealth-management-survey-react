@@ -39,7 +39,7 @@ const MasterForm = () => {
 
 		if (opener === 'nav') {
 			setSimpleModalHeadingText('Sign Up and Stay Informed');
-		} else if (opener === 'intro') {
+		} else if (opener === 'intro' || opener === 'footer') {
 			setSimpleModalHeadingText('Download the Survey Results');
 		} else {
 			setSimpleModalHeadingText('Sign Up and Stay Informed');
@@ -110,7 +110,24 @@ const MasterForm = () => {
 			</div>
 		);
 	} else {
-		return <Results currentStep={currentStep} checkedOptions={checkedOptions} />;
+		return (
+			<div>
+				<Results
+					checkedOptions={checkedOptions}
+					openSimpleModal={openSimpleModal}
+					openIntroductoryCallModal={openIntroductoryCallModal}
+				/>
+				<SimpleModal
+					isSimpleModalOpen={isSimpleModalOpen}
+					closeSimpleModal={closeSimpleModal}
+					simpleModalHeadingText={simpleModalHeadingText}
+				/>
+				<IntroductoryCallModal
+					isIntroductoryCallModalOpen={isIntroductoryCallModalOpen}
+					closeIntroductoryCallModal={closeIntroductoryCallModal}
+				/>
+			</div>
+		);
 	}
 };
 

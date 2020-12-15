@@ -1,9 +1,5 @@
 .question {
 	&--1 {
-		.question__heading {
-			color: $purpleHeart;
-		}
-
 		.question__svg {
 			path[fill='#6c63ff'],
 			rect[fill='#6c63ff'],
@@ -29,10 +25,6 @@
 	}
 
 	&--2 {
-		.question__heading {
-			color: $niagara;
-		}
-
 		.question__svg {
 			path[fill='#6c63ff'],
 			rect[fill='#6c63ff'],
@@ -58,15 +50,11 @@
 	}
 
 	&--3 {
-		.question__heading {
-			color: $supernova;
-		}
-
 		.question__svg {
 			path[fill='#6c63ff'],
 			rect[fill='#6c63ff'],
 			circle[fill='#6c63ff'] {
-				fill: $purpleHeart;
+				fill: $lochmara;
 			}
 		}
 
@@ -103,7 +91,8 @@
 	}
 
 	&__heading {
-		font-family: $font-playfair;
+		color: $gulfBlue;
+		font-family: $fontPlayfair;
 		font-size: 3rem;
 		line-height: 1.25;
 		font-weight: 800;

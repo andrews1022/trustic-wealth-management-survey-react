@@ -2,7 +2,7 @@
 .icm {
 	background-color: $white;
 	padding: 2rem;
-	width: 55vw;
+	width: 40vw;
 
 	&:focus {
 		outline: none;
@@ -14,23 +14,59 @@
 	}
 
 	&__form {
+		color: $gulfBlue;
+		margin-top: 3.5%;
 	}
 
 	&__form-group {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		&:not(:last-of-type) {
+			margin-bottom: 2%;
+		}
 	}
 
 	&__label {
+		font-size: 1.25rem;
+		font-weight: 700;
 	}
 
 	&__input {
+		padding: 0.25rem 0;
+		width: 15vw;
 	}
 
 	&__message {
+		width: 15vw;
 	}
 
 	&__legal {
+		margin-top: 5%;
+		text-align: center;
 	}
 
 	&__submit {
+		background-color: transparent;
+		border: none;
+		border: 2px solid $supernova;
+		border-radius: 3rem;
+		color: $purpleHeart;
+		cursor: pointer;
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-top: 2.5%;
+		padding: 0.75rem;
+		transition: $transitionSmoothShort;
+		width: 100%;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: darken($supernova, 10%);
+			box-shadow: $subtleBoxShadow;
+			transform: translateY(-0.25rem);
+		}
 	}
 }
