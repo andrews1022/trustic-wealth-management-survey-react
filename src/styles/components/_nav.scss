@@ -3,8 +3,17 @@
 	top: 5%;
 	right: 5%;
 
+	@media #{$tabletPortrait} {
+		padding: 2% 0;
+		position: static;
+	}
+
 	&__list {
 		display: flex;
+
+		@media #{$tabletPortrait} {
+			justify-content: center;
+		}
 	}
 
 	&__item {
@@ -17,10 +26,12 @@
 			margin-right: 0.5rem;
 		}
 
-		&:last-of-type {
-		}
+		// &:last-of-type {
+		// }
 
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
 			background-color: $lochmara;
 			color: $whiteSmoke;
 			box-shadow: $subtleBoxShadow;

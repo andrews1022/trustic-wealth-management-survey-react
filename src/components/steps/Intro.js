@@ -23,16 +23,18 @@ const Intro = ({ currentStep, onClickHandler, openSimpleModal }) => {
 							<p className='intro__copy'>
 								Want to find out what they said now? Download the survey results.
 							</p>
-							<button
-								className='intro__button intro__button--hollow'
-								onClick={openSimpleModal}
-								data-simple-modal-opener='intro'
-							>
-								Download Survey Results
-							</button>
-							<button className='intro__button intro__button--solid' onClick={onClickHandler}>
-								Start Survey
-							</button>
+							<div className='intro__button-row'>
+								<button
+									className='intro__button intro__button--hollow'
+									onClick={openSimpleModal}
+									data-simple-modal-opener='intro'
+								>
+									Download Survey Results
+								</button>
+								<button className='intro__button intro__button--solid' onClick={onClickHandler}>
+									Start Survey
+								</button>
+							</div>
 						</div>
 						<div className='intro__box'>
 							<IntroSVG className='intro__svg' />

@@ -1,8 +1,6 @@
 .ReactModal {
 	&__Overlay {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@extend %flexAlignJustifyCenter;
 		background-color: rgba(0, 0, 0, 0.75) !important;
 		opacity: 0;
 		transition: $transitionSmoothLong;

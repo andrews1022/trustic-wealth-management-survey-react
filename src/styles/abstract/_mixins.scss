@@ -1,12 +1,35 @@
-@mixin intro-button-colors($backgroundColor, $borderColor, $hoverBackgroundColor) {
-	background-color: $backgroundColor;
-	border: 2px solid $borderColor;
+// @mixin introButtonColors($backgroundColor, $borderColor, $hoverBackgroundColor) {
+// 	background-color: $backgroundColor;
+// 	border: 2px solid $borderColor;
 
-	&:hover,
-	&:active,
-	&:focus {
-		background-color: $hoverBackgroundColor;
-		box-shadow: $subtleBoxShadow;
-		transform: translateY(-0.25rem);
+// 	&:hover,
+// 	&:active,
+// 	&:focus {
+// 		background-color: $hoverBackgroundColor;
+// 		box-shadow: $subtleBoxShadow;
+// 		transform: translateY(-0.25rem);
+// 	}
+// }
+
+@mixin size($height, $width: $height) {
+	height: $height;
+	width: $width;
+}
+
+@mixin questionSvgColor($color) {
+	.question__svg {
+		path[fill='#6c63ff'],
+		rect[fill='#6c63ff'],
+		circle[fill='#6c63ff'] {
+			fill: $color;
+		}
 	}
+}
+
+@mixin modalLegalText($marginTop) {
+	font-size: 0.875rem;
+	line-height: 1.25;
+	margin: $marginTop auto 0 auto;
+	text-align: center;
+	width: 90%;
 }

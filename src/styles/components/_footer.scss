@@ -4,9 +4,7 @@
 	padding: 1.5% 0;
 
 	&__row {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@extend %flexAlignJustifyCenter;
 	}
 
 	&__box {
@@ -34,12 +32,32 @@
 		transition: $transitionSmoothShort;
 
 		&--hollow {
-			@include intro-button-colors(transparent, $supernova, $supernova);
-			margin-right: 1.25rem;
+			background-color: transparent;
+			border: 2px solid $gulfBlue;
+			margin-right: 1.5rem;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: $gulfBlue;
+				box-shadow: $subtleBoxShadow;
+				color: $white;
+				transform: translateY(-0.25rem);
+			}
 		}
 
 		&--solid {
-			@include intro-button-colors($supernova, transparent, darken($supernova, 10%));
+			background-color: $supernova;
+			border: 2px solid transparent;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: darken($supernova, 10%);
+				box-shadow: $subtleBoxShadow;
+				color: $gulfBlue;
+				transform: translateY(-0.25rem);
+			}
 		}
 	}
 

@@ -34,6 +34,7 @@ const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryC
 			className='icm' // introductory call modal shorthand: icm
 		>
 			<img className='icm__logo' src={Logo} alt='Trustic Logo' />
+			<div className='icm__divider'></div>
 			<form className='icm__form' action=''>
 				<div className='icm__form-group'>
 					<label className='icm__label' htmlFor='advisor'>
@@ -93,11 +94,12 @@ const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryC
 						className='icm__message'
 					></textarea>
 				</div>
-				<p className='icm__legal'>
-					By clicking below you agree to these <span>Terms and Conditions</span> and{' '}
-					<span>Privacy Policies</span>.
-				</p>
 				<input className='icm__submit' type='submit' value='Book Appointment' />
+				<p className='icm__legal'>
+					By clicking below you agree to these{' '}
+					<span className='icm__legal-highlight'>Terms and Conditions</span> and{' '}
+					<span className='icm__legal-highlight'>Privacy Policies</span>.
+				</p>
 			</form>
 		</Modal>
 	);

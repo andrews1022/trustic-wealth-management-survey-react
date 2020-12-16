@@ -1,26 +1,31 @@
 .intro {
 	&__row {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		@extend %flexAlignCenterJustifySpaceBetween;
+
+		@media #{$tabletPortrait} {
+			flex-direction: column-reverse;
+			padding: 0 7.5%;
+		}
 	}
 
 	&__box {
 		&:first-of-type {
 			flex: 0 0 40%;
+
+			@media #{$tabletPortrait} {
+				margin-top: 3.5%;
+				text-align: center;
+			}
 		}
 
 		&:last-of-type {
-			flex: 0 0 50%;
+			flex: 0 0 55%;
 		}
 	}
 
 	&__heading {
 		color: $gulfBlue;
-		font-family: $fontPlayfair;
-		font-size: 3rem;
-		font-weight: 800;
-		line-height: 1.25;
+		font: 800 3rem/1.25 $fontPlayfair;
 	}
 
 	&__copy {
@@ -28,6 +33,23 @@
 		font-size: 1.5rem;
 		line-height: 1.25;
 		margin: 4% 0 7.5% 0;
+
+		@media #{$tabletPortrait} {
+			margin: 3.5% 0;
+		}
+	}
+
+	&__button-row {
+		@extend %flexAlignCenter;
+
+		@media #{$laptopSmall} {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		@media #{$tabletPortrait} {
+			align-items: center;
+		}
 	}
 
 	&__button {
@@ -41,21 +63,48 @@
 		transition: $transitionSmoothShort;
 
 		&--hollow {
-			@include intro-button-colors($white, $supernova, $supernova);
-			margin-right: 1.5rem;
+			background-color: transparent;
+			border: 2px solid $gulfBlue;
+			margin-right: 3.5%;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: $gulfBlue;
+				box-shadow: $subtleBoxShadow;
+				color: $white;
+				transform: translateY(-0.25rem);
+			}
+
+			@media #{$laptopSmall} {
+				margin-right: 0;
+				margin-bottom: 3.5%;
+			}
 		}
 
 		&--solid {
-			@include intro-button-colors($supernova, transparent, darken($supernova, 10%));
+			background-color: $supernova;
+			border: 0.125rem solid transparent;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: darken($supernova, 10%);
+				box-shadow: $subtleBoxShadow;
+				color: $gulfBlue;
+				transform: translateY(-0.25rem);
+			}
 		}
 	}
 
 	&__svg {
+		height: auto;
+		width: 100%;
+
 		path[fill='#4834ae'],
 		rect[fill='#4834ae'],
 		circle[fill='#4834ae'] {
 			fill: $purpleHeart;
-			transition: $transitionSmoothExtraLong;
 		}
 	}
 }

@@ -1,21 +1,26 @@
-// introductory call modal shorthand: icm
 .icm {
 	background-color: $white;
 	padding: 2rem;
-	width: 40vw;
+	width: 30vw;
 
 	&:focus {
 		outline: none;
 	}
 
 	&__logo {
-		margin: 0 auto;
+		margin: 0 auto 5% auto;
 		width: 15rem;
+	}
+
+	&__divider {
+		@include size(0.125rem, 25%);
+		background-color: $gulfBlue;
+		margin: 0 auto 3.5% auto;
 	}
 
 	&__form {
 		color: $gulfBlue;
-		margin-top: 3.5%;
+		margin-top: 5%;
 	}
 
 	&__form-group {
@@ -39,24 +44,37 @@
 	}
 
 	&__message {
+		font-family: $fontLato;
 		width: 15vw;
 	}
 
 	&__legal {
-		margin-top: 5%;
-		text-align: center;
+		@include modalLegalText(1.5%);
+	}
+
+	&__legal-highlight {
+		color: $supernova;
+		cursor: pointer;
+		font-weight: 600;
+		transition: $transitionSmoothShort;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: darken($supernova, 10%);
+		}
 	}
 
 	&__submit {
 		background-color: transparent;
 		border: none;
-		border: 2px solid $supernova;
+		border: 2px solid $gulfBlue;
 		border-radius: 3rem;
-		color: $purpleHeart;
+		color: $gulfBlue;
 		cursor: pointer;
 		font-size: 1.25rem;
 		font-weight: 600;
-		margin-top: 2.5%;
+		margin-top: 5%;
 		padding: 0.75rem;
 		transition: $transitionSmoothShort;
 		width: 100%;
@@ -64,8 +82,9 @@
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: darken($supernova, 10%);
+			background-color: darken($gulfBlue, 10%);
 			box-shadow: $subtleBoxShadow;
+			color: $white;
 			transform: translateY(-0.25rem);
 		}
 	}
