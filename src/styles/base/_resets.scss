@@ -9,6 +9,10 @@ html {
 	@media #{$tabletLandscape} {
 		font-size: 75%;
 	}
+
+	@media #{$tabletPortrait} {
+		font-size: 62.5%;
+	}
 }
 
 body {
@@ -27,7 +31,8 @@ body {
 	padding: 0;
 }
 
-img {
+img,
+svg {
 	border: 0;
 	display: block;
 	height: auto;

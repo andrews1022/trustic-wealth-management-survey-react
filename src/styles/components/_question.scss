@@ -13,15 +13,28 @@
 
 	&__row {
 		@extend %flexAlignCenterJustifySpaceBetween;
+
+		@media #{$tabletPortrait} {
+			flex-direction: column;
+			padding: 0 7.5%;
+		}
 	}
 
 	&__box {
 		&:first-of-type {
 			flex: 0 0 47.5%;
+
+			@media #{$tabletPortrait} {
+				text-align: center;
+			}
 		}
 
 		&:last-of-type {
 			flex: 0 0 50%;
+
+			@media #{$tabletPortrait} {
+				display: none;
+			}
 		}
 	}
 
@@ -35,12 +48,25 @@
 		flex-wrap: wrap;
 		color: $gulfBlue;
 		margin: 3.5% 0 7.5% 0;
+
+		@media #{$tabletPortrait} {
+			margin: 3.5% 0;
+		}
 	}
 
 	&__item {
 		@extend %flexAlignCenter;
 		flex: $flexFiftyFifty;
-		margin-bottom: 0.625rem;
+		margin-bottom: 1.25%;
+
+		@media #{$laptopSmall} {
+			flex: 1 1 100%;
+			margin-bottom: 2%;
+		}
+
+		@media #{$tabletPortrait} {
+			justify-content: center;
+		}
 	}
 
 	&__checkbox {
