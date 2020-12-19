@@ -1,6 +1,10 @@
 .results {
 	&__inner {
 		padding: 4.25% 5% 0 5%;
+
+		@media #{$tabletPortrait} {
+			padding: 4.25% 7.5% 0 7.5%;
+		}
 	}
 
 	&__hero-text {
@@ -17,6 +21,19 @@
 		font: 800 1.75rem/1.25 $fontPlayfair;
 		margin: 1.75% auto 3% auto;
 		width: 50%;
+
+		@media #{$tabletPortrait} {
+			width: 75%;
+		}
+
+		@media #{$mobileLarge} {
+			margin: 4% auto;
+			width: 90%;
+		}
+
+		@media #{$mobileMedium} {
+			width: 100%;
+		}
 	}
 
 	&__reminder {
@@ -24,11 +41,28 @@
 		font-size: 1.125rem;
 		margin: $marginCenter;
 		width: 33%;
+
+		@media #{$tabletPortrait} {
+			width: 50%;
+		}
+
+		@media #{$mobileLarge} {
+			width: 75%;
+		}
+
+		@media #{$mobileMedium} {
+			width: 100%;
+		}
 	}
 
 	&__selections {
 		@extend %flexAlignJustifyCenter;
 		margin-top: 1%;
+
+		@media #{$mobileLarge} {
+			margin-top: 3%;
+			margin-bottom: 3%;
+		}
 	}
 
 	&__selections-box {
@@ -47,6 +81,14 @@
 		@include size(0.125rem, 3.25rem);
 		background-color: $gulfBlue;
 		margin: 2.5% auto 2% auto;
+
+		@media #{$tabletPortrait} {
+			@include size(0.25rem, 4rem);
+		}
+
+		@media #{$mobileMedium} {
+			margin: 4% auto;
+		}
 	}
 
 	// &__answers {
@@ -58,11 +100,44 @@
 		margin: 0 auto 2.75% auto;
 		text-align: center;
 		width: 34.5%;
+
+		@media #{$desktopSmall} {
+			width: 38.5%;
+		}
+
+		@media #{$tabletPortrait} {
+			width: 50%;
+		}
+
+		@media #{$mobileLarge} {
+			width: 75%;
+		}
+
+		@media #{$mobileMedium} {
+			margin-bottom: 4%;
+			width: 100%;
+		}
 	}
 
 	&__answers-list {
 		margin: $marginCenter;
 		width: 29%;
+
+		@media #{$desktopSmall} {
+			width: 33%;
+		}
+
+		@media #{$tabletPortrait} {
+			width: 40%;
+		}
+
+		@media #{$mobileLarge} {
+			width: 55%;
+		}
+
+		@media #{$mobileMedium} {
+			width: 100%;
+		}
 	}
 
 	&__answers-item {
@@ -84,6 +159,14 @@
 		background-color: $gulfBlue;
 		height: 1.25rem;
 		// width is handled by javascript
+
+		@media #{$tabletLandscape} {
+			height: 1.5rem;
+		}
+
+		@media #{$tabletPortrait} {
+			height: 1.75rem;
+		}
 
 		&.selected {
 			background-color: $supernova;

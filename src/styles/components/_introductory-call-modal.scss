@@ -1,11 +1,15 @@
 .icm {
 	background-color: $white;
 	padding: 2rem;
+	position: relative;
 	width: 30vw;
 
 	&:focus {
 		outline: none;
 	}
+
+	// &__inner {
+	// }
 
 	&__logo {
 		margin: 0 auto 5% auto;
@@ -88,4 +92,7 @@
 			transform: translateY(-0.25rem);
 		}
 	}
+
+	// &__ty {
+	// }
 }

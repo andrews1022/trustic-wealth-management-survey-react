@@ -2,11 +2,15 @@
 	background-color: $white;
 	color: $gulfBlue;
 	padding: 2rem;
+	position: relative;
 	width: 30vw;
 
 	&:focus {
 		outline: none;
 	}
+
+	// &__inner {
+	// }
 
 	&__logo {
 		margin: $marginCenter;
@@ -67,11 +71,18 @@
 			background-color: $gulfBlue;
 			box-shadow: $subtleBoxShadow;
 			color: $white;
+			outline: none;
 			transform: translateY(-0.25rem);
 		}
 	}
 
 	&__legal {
 		@include modalLegalText(2.25%);
+	}
+
+	&__thank-you {
+		color: $gulfBlue;
+		font-size: 1.5rem;
+		text-align: center;
 	}
 }
