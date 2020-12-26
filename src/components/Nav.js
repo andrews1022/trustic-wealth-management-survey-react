@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { fadeInOut } from './../animations/Animations';
 
 const Nav = ({ openSimpleModal, openIntroductoryCallModal }) => {
 	return (
 		<AnimatePresence>
 			<motion.nav
-				key='Nav'
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				exit={{ opacity: 0 }}
-				transition={{ duration: 1.5 }}
+				variants={fadeInOut}
+				initial='hidden'
+				animate='show'
+				exit='exit'
+				key='nav'
 				className='nav'
 			>
 				<ul className='nav__list'>

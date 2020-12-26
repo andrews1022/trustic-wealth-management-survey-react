@@ -12,7 +12,7 @@ const Footer = ({ openSimpleModal, openIntroductoryCallModal }) => {
 				</div>
 				<div className='footer__box'>
 					<button
-						className='footer__button footer__button--hollow'
+						className='footer__button button button--hollow button--small'
 						onClick={openSimpleModal}
 						data-simple-modal-opener='footer'
 					>
@@ -20,7 +20,7 @@ const Footer = ({ openSimpleModal, openIntroductoryCallModal }) => {
 						Download Complete Survey
 					</button>
 					<button
-						className='footer__button footer__button--solid'
+						className='footer__button button button--solid button--small'
 						onClick={openIntroductoryCallModal}
 					>
 						<FontAwesomeIcon className='footer__icon' icon={faPhoneVolume} />

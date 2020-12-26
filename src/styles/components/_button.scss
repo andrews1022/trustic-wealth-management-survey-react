@@ -1,0 +1,54 @@
+.button {
+	border: none;
+	border-radius: 3rem;
+	color: $gulfBlue;
+	cursor: pointer;
+	font-weight: 600;
+	transition: $transitionSmoothShort;
+
+	&--hollow {
+		background-color: transparent;
+		border: 0.125rem solid $gulfBlue;
+		margin-right: 1.5rem;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: $gulfBlue;
+			box-shadow: $subtleBoxShadow;
+			color: $white;
+			outline: none;
+			transform: translateY(-0.25rem);
+		}
+	}
+
+	&--solid {
+		background-color: $supernova;
+		border: 0.125rem solid transparent;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: darken($supernova, 10%);
+			box-shadow: $subtleBoxShadow;
+			color: $gulfBlue;
+			outline: none;
+			transform: translateY(-0.25rem);
+		}
+	}
+
+	&--small {
+		font-size: 1.125rem;
+		padding: 0.5rem 1.25rem;
+	}
+
+	&--large {
+		font-size: 1.25rem;
+		padding: 1rem 2rem;
+	}
+
+	&--modal {
+		margin: 5% 0 0 0;
+		width: 100%;
+	}
+}

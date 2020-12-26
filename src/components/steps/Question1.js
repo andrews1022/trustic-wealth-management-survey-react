@@ -1,27 +1,28 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { fadeInOut } from './../../animations/Animations';
 import { titles, options } from './../../data/data';
 import { ReactComponent as QuestionSVG } from './../../images/question.svg';
 
 const Question1 = ({ currentStep, currentQuestion, onClickHandler, handleCheckedOptions }) => {
 	if (currentStep === 1) {
 		return (
-			<AnimatePresence>
+			<AnimatePresence exitBeforeEnter>
 				<motion.div
-					key='Question1'
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ duration: 1 }}
+					variants={fadeInOut}
+					initial='hidden'
+					animate='show'
+					exit='exit'
+					key='question 1 container'
 					className={`question question--${currentQuestion}`}
 				>
 					<div className='question__row'>
 						<motion.div
-							key='Question1LeftBox'
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							transition={{ duration: 1.5 }}
+							variants={fadeInOut}
+							initial='hidden'
+							animate='show'
+							exit='exit'
+							key='question 1 left hand box'
 							className='question__box'
 						>
 							<h2 className='question__heading'>
@@ -45,7 +46,7 @@ const Question1 = ({ currentStep, currentQuestion, onClickHandler, handleChecked
 										)
 								)}
 							</ul>
-							<button className='question__button' onClick={onClickHandler}>
+							<button className='button button--hollow button--large' onClick={onClickHandler}>
 								Next Question
 							</button>
 						</motion.div>

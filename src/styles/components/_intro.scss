@@ -53,48 +53,15 @@
 	}
 
 	&__button {
-		border: none;
-		border-radius: 3rem;
-		color: $gulfBlue;
-		cursor: pointer;
-		font-size: 1.25rem;
-		font-weight: 600;
-		padding: 1rem 2rem;
-		transition: $transitionSmoothShort;
-
-		&--hollow {
-			background-color: transparent;
-			border: 2px solid $gulfBlue;
-			margin-right: 3.5%;
-
-			&:hover,
-			&:active,
-			&:focus {
-				background-color: $gulfBlue;
-				box-shadow: $subtleBoxShadow;
-				color: $white;
-				transform: translateY(-0.25rem);
-			}
-
+		&:first-of-type {
 			@media #{$laptopSmall} {
 				margin-right: 0;
-				margin-bottom: 3.5%;
+				margin-bottom: 4%;
 			}
 		}
 
-		&--solid {
-			background-color: $supernova;
-			border: 0.125rem solid transparent;
-
-			&:hover,
-			&:active,
-			&:focus {
-				background-color: darken($supernova, 10%);
-				box-shadow: $subtleBoxShadow;
-				color: $gulfBlue;
-				transform: translateY(-0.25rem);
-			}
-		}
+		// &:last-of-type {
+		// }
 	}
 
 	&__svg {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Modal from 'react-modal';
 import ThankYou from './ThankYou';
+import { fadeIn, modalContentSwitch } from './../../animations/Animations';
 import Logo from './../../images/trustic-logo.png';
 
 const SimpleModal = ({ isSimpleModalOpen, closeSimpleModal, simpleModalHeadingText }) => {
@@ -30,11 +31,11 @@ const SimpleModal = ({ isSimpleModalOpen, closeSimpleModal, simpleModalHeadingTe
 			{formIsSubmitted === false ? (
 				<AnimatePresence>
 					<motion.div
-						key='SimpleModalForm'
-						initial={{ opacity: 1 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						transition={{ duration: 1.5 }}
+						variants={modalContentSwitch}
+						initial='hidden'
+						animate='show'
+						exit='exit'
+						key='simple modal'
 						className='sm__inner'
 					>
 						<img className='sm__logo' src={Logo} alt='Trustic Logo' />
@@ -66,7 +67,11 @@ const SimpleModal = ({ isSimpleModalOpen, closeSimpleModal, simpleModalHeadingTe
 								/>
 							</div>
 							<div className='sm__form-group'>
-								<input className='sm__submit' type='submit' value='Submit' />
+								<input
+									className='button button--hollow button--large button--modal'
+									type='submit'
+									value='Submit'
+								/>
 							</div>
 							<p className='sm__legal'>
 								By submitting, I agree to receive email communications from Trustic Wealth
@@ -78,9 +83,10 @@ const SimpleModal = ({ isSimpleModalOpen, closeSimpleModal, simpleModalHeadingTe
 				</AnimatePresence>
 			) : (
 				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
+					variants={fadeIn}
+					initial='hidden'
+					animate='show'
+					key='sm thank you'
 					className='sm__thank-you'
 				>
 					<ThankYou closeModalFn={closeSimpleModal} />

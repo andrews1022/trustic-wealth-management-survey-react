@@ -5,6 +5,7 @@ import TimePicker from 'react-time-picker';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import ThankYou from './ThankYou';
+import { fadeIn, modalContentSwitch } from './../../animations/Animations';
 import Logo from './../../images/trustic-logo.png';
 
 const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryCallModal }) => {
@@ -50,11 +51,11 @@ const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryC
 			{formIsSubmitted === false ? (
 				<AnimatePresence>
 					<motion.div
-						key='IntroductoryCallModalForm'
-						initial={{ opacity: 1 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						transition={{ duration: 1.5 }}
+						variants={modalContentSwitch}
+						initial='hidden'
+						animate='show'
+						exit='exit'
+						key='introductory call modal'
 						className='icm__inner'
 					>
 						<img className='icm__logo' src={Logo} alt='Trustic Logo' />
@@ -122,7 +123,11 @@ const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryC
 									className='icm__message'
 								></textarea>
 							</div>
-							<input className='icm__submit' type='submit' value='Book Appointment' />
+							<input
+								className='button button--hollow button--large button--modal'
+								type='submit'
+								value='Book Appointment'
+							/>
 							<p className='icm__legal'>
 								By clicking below you agree to these{' '}
 								<span className='icm__legal-highlight'>Terms and Conditions</span> and{' '}
@@ -133,9 +138,10 @@ const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryC
 				</AnimatePresence>
 			) : (
 				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
+					variants={fadeIn}
+					initial='hidden'
+					animate='show'
+					key='icm thank you'
 					className='icm__ty'
 				>
 					<ThankYou closeModalFn={closeIntroductoryCallModal} />

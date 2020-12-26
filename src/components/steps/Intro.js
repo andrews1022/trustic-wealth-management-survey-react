@@ -1,18 +1,19 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { fadeInOut } from './../../animations/Animations';
 import { ReactComponent as IntroSVG } from './../../images/intro.svg';
 import { titles } from './../../data/data';
 
 const Intro = ({ currentStep, onClickHandler, openSimpleModal }) => {
 	if (currentStep === 0) {
 		return (
-			<AnimatePresence>
+			<AnimatePresence exitBeforeEnter>
 				<motion.div
-					key='Intro'
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ duration: 1.5 }}
+					variants={fadeInOut}
+					initial='hidden'
+					animate='show'
+					exit='exit'
+					key='intro'
 					className='intro'
 				>
 					<div className='intro__row'>
@@ -25,13 +26,16 @@ const Intro = ({ currentStep, onClickHandler, openSimpleModal }) => {
 							</p>
 							<div className='intro__button-row'>
 								<button
-									className='intro__button intro__button--hollow'
+									className='intro__button button button--hollow button--large'
 									onClick={openSimpleModal}
 									data-simple-modal-opener='intro'
 								>
 									Download Survey Results
 								</button>
-								<button className='intro__button intro__button--solid' onClick={onClickHandler}>
+								<button
+									className='intro__button button button--solid button--large'
+									onClick={onClickHandler}
+								>
 									Start Survey
 								</button>
 							</div>

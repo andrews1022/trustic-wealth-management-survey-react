@@ -15,6 +15,18 @@
   justify-content: space-between;
 }
 
+.icm, .sm {
+  background-color: #fff;
+  color: #384160;
+  padding: 2rem;
+  position: relative;
+  width: 30vw;
+}
+
+.icm:focus, .sm:focus {
+  outline: none;
+}
+
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -84,6 +96,57 @@ button:focus {
   outline: none;
 }
 
+.button {
+  border: none;
+  border-radius: 3rem;
+  color: #384160;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 175ms ease-in-out;
+}
+
+.button--hollow {
+  background-color: transparent;
+  border: 0.125rem solid #384160;
+  margin-right: 1.5rem;
+}
+
+.button--hollow:hover, .button--hollow:active, .button--hollow:focus {
+  background-color: #384160;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
+  color: #fff;
+  outline: none;
+  transform: translateY(-0.25rem);
+}
+
+.button--solid {
+  background-color: #fcb332;
+  border: 0.125rem solid transparent;
+}
+
+.button--solid:hover, .button--solid:active, .button--solid:focus {
+  background-color: #f79f04;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
+  color: #384160;
+  outline: none;
+  transform: translateY(-0.25rem);
+}
+
+.button--small {
+  font-size: 1.125rem;
+  padding: 0.5rem 1.25rem;
+}
+
+.button--large {
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+
+.button--modal {
+  margin: 5% 0 0 0;
+  width: 100%;
+}
+
 .footer {
   background-color: #eee;
   margin-top: 4.25%;
@@ -142,47 +205,11 @@ button:focus {
   width: 13rem;
 }
 
-.footer__button {
-  border: none;
-  border-radius: 3rem;
-  color: #384160;
-  cursor: pointer;
-  font-size: 1.125rem;
-  font-weight: 600;
-  padding: 0.5rem 1.25rem;
-  transition: all 175ms ease-in-out;
-}
-
-.footer__button--hollow {
-  background-color: transparent;
-  border: 2px solid #384160;
-  margin-right: 1.5rem;
-}
-
-.footer__button--hollow:hover, .footer__button--hollow:active, .footer__button--hollow:focus {
-  background-color: #384160;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
-  color: #fff;
-  transform: translateY(-0.25rem);
-}
-
-@media only screen and (max-width: 415px) {
-  .footer__button--hollow {
+@media only screen and (max-width: 1280px) {
+  .footer__button:first-of-type {
     margin-right: 0;
     margin-bottom: 4%;
   }
-}
-
-.footer__button--solid {
-  background-color: #fcb332;
-  border: 2px solid transparent;
-}
-
-.footer__button--solid:hover, .footer__button--solid:active, .footer__button--solid:focus {
-  background-color: #f79f04;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
-  color: #384160;
-  transform: translateY(-0.25rem);
 }
 
 .footer__icon {
@@ -243,64 +270,17 @@ button:focus {
   }
 }
 
-.intro__button {
-  border: none;
-  border-radius: 3rem;
-  color: #384160;
-  cursor: pointer;
-  font-size: 1.25rem;
-  font-weight: 600;
-  padding: 1rem 2rem;
-  transition: all 175ms ease-in-out;
-}
-
-.intro__button--hollow {
-  background-color: transparent;
-  border: 2px solid #384160;
-  margin-right: 3.5%;
-}
-
-.intro__button--hollow:hover, .intro__button--hollow:active, .intro__button--hollow:focus {
-  background-color: #384160;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
-  color: #fff;
-  transform: translateY(-0.25rem);
-}
-
 @media only screen and (max-width: 1280px) {
-  .intro__button--hollow {
+  .intro__button:first-of-type {
     margin-right: 0;
-    margin-bottom: 3.5%;
+    margin-bottom: 4%;
   }
-}
-
-.intro__button--solid {
-  background-color: #fcb332;
-  border: 0.125rem solid transparent;
-}
-
-.intro__button--solid:hover, .intro__button--solid:active, .intro__button--solid:focus {
-  background-color: #f79f04;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
-  color: #384160;
-  transform: translateY(-0.25rem);
 }
 
 .intro__svg path[fill='#4834ae'],
 .intro__svg rect[fill='#4834ae'],
 .intro__svg circle[fill='#4834ae'] {
   fill: #4834ae;
-}
-
-.icm {
-  background-color: #fff;
-  padding: 2rem;
-  position: relative;
-  width: 30vw;
-}
-
-.icm:focus {
-  outline: none;
 }
 
 .icm__logo {
@@ -316,7 +296,6 @@ button:focus {
 }
 
 .icm__form {
-  color: #384160;
   margin-top: 5%;
 }
 
@@ -332,7 +311,6 @@ button:focus {
 
 .icm__label {
   font-size: 1.25rem;
-  font-weight: 700;
 }
 
 .icm__input {
@@ -362,28 +340,6 @@ button:focus {
 
 .icm__legal-highlight:hover, .icm__legal-highlight:active, .icm__legal-highlight:focus {
   color: #f79f04;
-}
-
-.icm__submit {
-  background-color: transparent;
-  border: none;
-  border: 2px solid #384160;
-  border-radius: 3rem;
-  color: #384160;
-  cursor: pointer;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 5%;
-  padding: 0.75rem;
-  transition: all 175ms ease-in-out;
-  width: 100%;
-}
-
-.icm__submit:hover, .icm__submit:active, .icm__submit:focus {
-  background-color: #252b40;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
-  color: #fff;
-  transform: translateY(-0.25rem);
 }
 
 .master-form {
@@ -544,27 +500,6 @@ button:focus {
 .question__label {
   color: #384160;
   font-size: 1.125rem;
-}
-
-.question__button {
-  background-color: transparent;
-  border: none;
-  border: 0.125rem solid #2d5ca7;
-  border-radius: 3rem;
-  color: #2d5ca7;
-  cursor: pointer;
-  font-size: 1.25rem;
-  padding: 1rem 2rem;
-  font-weight: 600;
-  transition: all 175ms ease-in-out;
-}
-
-.question__button:hover, .question__button:active, .question__button:focus {
-  background-color: #2d5ca7;
-  color: #eee;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
-  outline: none;
-  transform: translateY(-0.25rem);
 }
 
 .ReactModal__Overlay {
@@ -791,18 +726,6 @@ button:focus {
   background-color: #fcb332;
 }
 
-.sm {
-  background-color: #fff;
-  color: #384160;
-  padding: 2rem;
-  position: relative;
-  width: 30vw;
-}
-
-.sm:focus {
-  outline: none;
-}
-
 .sm__logo {
   margin: 0 auto;
   width: 15rem;
@@ -838,41 +761,12 @@ button:focus {
   width: 100%;
 }
 
-.sm__submit {
-  background-color: transparent;
-  border: none;
-  border-radius: 3rem;
-  border: 2px solid #384160;
-  color: #384160;
-  cursor: pointer;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 5%;
-  padding: 1rem 2rem;
-  transition: all 175ms ease-in-out;
-  width: 100%;
-}
-
-.sm__submit:hover, .sm__submit:active, .sm__submit:focus {
-  background-color: #384160;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.15);
-  color: #fff;
-  outline: none;
-  transform: translateY(-0.25rem);
-}
-
 .sm__legal {
   font-size: 0.875rem;
   line-height: 1.25;
   margin: 2.25% auto 0 auto;
   text-align: center;
   width: 90%;
-}
-
-.sm__thank-you {
-  color: #384160;
-  font-size: 1.5rem;
-  text-align: center;
 }
 
 .ty {

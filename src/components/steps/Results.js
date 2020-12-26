@@ -1,19 +1,14 @@
 import React from 'react';
-import Footer from './../Footer';
 import { motion } from 'framer-motion';
+import Footer from './../Footer';
+import { fadeIn } from './../../animations/Animations';
 import { titles, options } from './../../data/data';
 
 const Results = ({ checkedOptions, openSimpleModal, openIntroductoryCallModal }) => {
 	const wasSelected = (option) => (checkedOptions.indexOf(option.id) > -1 ? 'selected' : '');
 
 	return (
-		<motion.div
-			key='Results'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			transition={{ duration: 1.5 }}
-			className='results'
-		>
+		<motion.div variants={fadeIn} initial='hidden' animate='show' key='results' className='results'>
 			<div className='results__inner'>
 				<div className='results__hero-text'>
 					<h2 className='results__heading'>See how your answers align with other Canadians.</h2>

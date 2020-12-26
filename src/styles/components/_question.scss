@@ -78,35 +78,4 @@
 		color: $gulfBlue;
 		font-size: 1.125rem;
 	}
-
-	&__button {
-		background-color: transparent;
-		border: none;
-		border: 0.125rem solid $lochmara;
-		border-radius: 3rem;
-		color: $lochmara;
-		cursor: pointer;
-		font-size: 1.25rem;
-		padding: 1rem 2rem;
-		font-weight: 600;
-		transition: $transitionSmoothShort;
-
-		&:hover,
-		&:active,
-		&:focus {
-			background-color: $lochmara;
-			color: $whiteSmoke;
-			box-shadow: $subtleBoxShadow;
-			outline: none;
-			transform: translateY(-0.25rem);
-		}
-	}
-
-	// &__svg {
-	// 	transition: $transitionSmoothExtraLong;
-
-	// 	* {
-	// 		transition: $transitionSmoothExtraLong;
-	// 	}
-	// }
 }
