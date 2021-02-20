@@ -1,37 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+// context
+import { FormContext } from './../../App';
+
+// animations
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeInOut } from './../../animations/Animations';
-import { titles, options } from './../../data/data';
-import { ReactComponent as QuestionSVG } from './../../images/question.svg';
 
-const Question1 = ({ currentStep, currentQuestion, onClickHandler, handleCheckedOptions }) => {
-	if (currentStep === 1) {
-		return (
-			<AnimatePresence exitBeforeEnter>
-				<motion.div
-					variants={fadeInOut}
-					initial='hidden'
-					animate='show'
-					exit='exit'
-					key='question 1 container'
-					className={`question question--${currentQuestion}`}
-				>
+// data
+import { titles, options } from './../../data/data';
+
+// svg
+import QuestionSVG from './../svgs/QuestionSVG';
+
+const Question1 = ({ handleCheckedOptions }) => {
+	const formContext = useContext(FormContext);
+
+	return (
+		<>
+			{formContext.formState.currentStep === 1 ? (
+				<div className={`question question--${formContext.formState.currentQuestion}`}>
 					<div className='question__row'>
-						<motion.div
-							variants={fadeInOut}
-							initial='hidden'
-							animate='show'
-							exit='exit'
-							key='question 1 left hand box'
-							className='question__box'
-						>
+						<div className='question__box'>
+							<h4 className='question__sub-heading'>
+								Question {formContext.formState.currentQuestion}/3
+							</h4>
 							<h2 className='question__heading'>
-								{titles[titles.map((el) => el.step).indexOf(currentStep)].title}
+								{
+									titles[titles.map((el) => el.step).indexOf(formContext.formState.currentStep)]
+										.title
+								}
 							</h2>
 							<ul className='question__list'>
 								{options.map(
 									(option) =>
-										option.forQuestion === currentQuestion && (
+										option.forQuestion === formContext.formState.currentQuestion && (
 											<li className='question__item' key={option.id}>
 												<input
 													className='question__checkbox'
@@ -46,21 +49,24 @@ const Question1 = ({ currentStep, currentQuestion, onClickHandler, handleChecked
 										)
 								)}
 							</ul>
-							<button className='button button--hollow button--large' onClick={onClickHandler}>
+							<button
+								className='button button--hollow button--large'
+								onClick={() =>
+									formContext.formDispatch({ type: 'INCREMENT_CURRENT_STEP_AND_QUESTION' })
+								}
+							>
 								Next Question
 							</button>
-						</motion.div>
+						</div>
 
 						<div className='question__box'>
 							<QuestionSVG className='question__svg' />
 						</div>
 					</div>
-				</motion.div>
-			</AnimatePresence>
-		);
-	} else {
-		return null;
-	}
+				</div>
+			) : null}
+		</>
+	);
 };
 
 export default Question1;

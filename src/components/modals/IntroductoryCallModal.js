@@ -1,14 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
+// context
+import { FormContext } from './../../App';
+
+// animations
 import { motion, AnimatePresence } from 'framer-motion';
+import { fadeIn, modalContentSwitch } from './../../animations/Animations';
+
+// modal
 import Modal from 'react-modal';
+
+// react inputs
 import TimePicker from 'react-time-picker';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+
+// components
 import ThankYou from './ThankYou';
-import { fadeIn, modalContentSwitch } from './../../animations/Animations';
+
+// logo
 import Logo from './../../images/trustic-logo.png';
 
-const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryCallModal }) => {
+const IntroductoryCallModal = () => {
+	// context
+	const formContext = useContext(FormContext);
+
 	// state
 	const [formIsSubmitted, setFormIsSubmitted] = useState(false);
 	const [date, setDate] = useState(new Date());
@@ -29,123 +45,108 @@ const IntroductoryCallModal = ({ isIntroductoryCallModalOpen, closeIntroductoryC
 		const currentDate = new Date();
 
 		// set date and time picker values to current date if modal is open
-		if (isIntroductoryCallModalOpen) {
+		if (formContext.formState.isIntroductoryCallModalOpen) {
 			setDate(currentDate);
 			setTime(currentDate);
 		}
 
 		// cleanup
-		return () => !isIntroductoryCallModalOpen;
-	}, [isIntroductoryCallModalOpen]);
+		return () => !formContext.formState.isIntroductoryCallModalOpen;
+	}, [formContext.formState.isIntroductoryCallModalOpen]);
 
 	return (
 		<Modal
-			isOpen={isIntroductoryCallModalOpen}
+			isOpen={formContext.formState.isIntroductoryCallModalOpen}
 			contentLabel='Simple Contact Form'
-			onRequestClose={closeIntroductoryCallModal}
+			onRequestClose={() => formContext.formDispatch({ type: 'CLOSE_INTRODUCTORY_CALL_MODAL' })}
 			onAfterClose={resetModalContent}
 			ariaHideApp={false}
 			closeTimeoutMS={500}
-			className='icm' // introductory call modal shorthand: icm
+			className='icm'
 		>
 			{formIsSubmitted === false ? (
-				<AnimatePresence>
-					<motion.div
-						variants={modalContentSwitch}
-						initial='hidden'
-						animate='show'
-						exit='exit'
-						key='introductory call modal'
-						className='icm__inner'
-					>
-						<img className='icm__logo' src={Logo} alt='Trustic Logo' />
-						<div className='icm__divider'></div>
-						<form className='icm__form' onSubmit={formSubmitHandler}>
-							<div className='icm__form-group'>
-								<label className='icm__label' htmlFor='advisor'>
-									Meeting with
-								</label>
-								<select className='icm__input' name='advisor' id='advisor'>
-									<option value='Choose Advisor'>Choose Advisor</option>
-									<option value='Daniel'>Daniel</option>
-									<option value='Gabriella'>Gabriella</option>
-									<option value='Randall'>Randall</option>
-									<option value='Lillian'>Lillian</option>
-									<option value='Beatrice'>Beatrice</option>
-								</select>
-							</div>
-							<div className='icm__form-group'>
-								<label className='icm__label'>On</label>
-								<DatePicker
-									selected={date}
-									onChange={(date) => setDate(date)}
-									className='icm__input'
-								/>
-							</div>
-							<div className='icm__form-group'>
-								<label className='icm__label'>At</label>
-								<TimePicker onChange={setTime} value={time} className='icm__input' />
-							</div>
-							<div className='icm__form-group'>
-								<label className='icm__label' htmlFor='name'>
-									Name
-								</label>
-								<input
-									className='icm__input'
-									type='text'
-									name='name'
-									id='name'
-									placeholder='Enter your full name'
-								/>
-							</div>
-							<div className='icm__form-group'>
-								<label className='icm__label' htmlFor='email'>
-									Email
-								</label>
-								<input
-									className='icm__input'
-									type='email'
-									name='email'
-									id='email'
-									placeholder='Enter your email address'
-								/>
-							</div>
-							<div className='icm__form-group'>
-								<label className='icm__label' htmlFor='message'>
-									Message
-								</label>
-								<textarea
-									name='message'
-									id='message'
-									cols='30'
-									rows='5'
-									placeholder='Anything we should know?'
-									className='icm__message'
-								></textarea>
-							</div>
-							<input
-								className='button button--hollow button--large button--modal'
-								type='submit'
-								value='Book Appointment'
+				<div className='icm__inner'>
+					<img className='icm__logo' src={Logo} alt='Trustic Logo' />
+					<div className='icm__divider'></div>
+					<form className='icm__form' onSubmit={formSubmitHandler}>
+						<div className='icm__form-group'>
+							<label className='icm__label' htmlFor='advisor'>
+								Meeting with
+							</label>
+							<select className='icm__input' name='advisor' id='advisor'>
+								<option value='Choose Advisor'>Choose Advisor</option>
+								<option value='Daniel'>Daniel</option>
+								<option value='Gabriella'>Gabriella</option>
+								<option value='Randall'>Randall</option>
+								<option value='Lillian'>Lillian</option>
+								<option value='Beatrice'>Beatrice</option>
+							</select>
+						</div>
+						<div className='icm__form-group'>
+							<label className='icm__label'>On</label>
+							<DatePicker
+								selected={date}
+								onChange={(date) => setDate(date)}
+								className='icm__input'
 							/>
-							<p className='icm__legal'>
-								By clicking below you agree to these{' '}
-								<span className='icm__legal-highlight'>Terms and Conditions</span> and{' '}
-								<span className='icm__legal-highlight'>Privacy Policies</span>.
-							</p>
-						</form>
-					</motion.div>
-				</AnimatePresence>
+						</div>
+						<div className='icm__form-group'>
+							<label className='icm__label'>At</label>
+							<TimePicker onChange={setTime} value={time} className='icm__input' />
+						</div>
+						<div className='icm__form-group'>
+							<label className='icm__label' htmlFor='name'>
+								Name
+							</label>
+							<input
+								className='icm__input'
+								type='text'
+								name='name'
+								id='name'
+								placeholder='Enter your full name'
+							/>
+						</div>
+						<div className='icm__form-group'>
+							<label className='icm__label' htmlFor='email'>
+								Email
+							</label>
+							<input
+								className='icm__input'
+								type='email'
+								name='email'
+								id='email'
+								placeholder='Enter your email address'
+							/>
+						</div>
+						<div className='icm__form-group'>
+							<label className='icm__label' htmlFor='message'>
+								Message
+							</label>
+							<textarea
+								name='message'
+								id='message'
+								cols='30'
+								rows='5'
+								placeholder='Anything we should know?'
+								className='icm__message'
+							></textarea>
+						</div>
+						<input
+							className='button button--hollow button--large button--modal'
+							type='submit'
+							value='Book Appointment'
+						/>
+						<p className='icm__legal'>
+							By clicking below you agree to these{' '}
+							<span className='icm__legal-highlight'>Terms and Conditions</span> and{' '}
+							<span className='icm__legal-highlight'>Privacy Policies</span>.
+						</p>
+					</form>
+				</div>
 			) : (
-				<motion.div
-					variants={fadeIn}
-					initial='hidden'
-					animate='show'
-					key='icm thank you'
-					className='icm__ty'
-				>
-					<ThankYou closeModalFn={closeIntroductoryCallModal} />
-				</motion.div>
+				<div className='icm__ty'>
+					<ThankYou closeModalType='INTRODUCTORY_CALL' />
+				</div>
 			)}
 		</Modal>
 	);

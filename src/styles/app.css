@@ -410,21 +410,15 @@ button:focus {
   transform: translateY(-0.25rem);
 }
 
-.question--1 .question__svg path[fill='#6c63ff'],
-.question--1 .question__svg rect[fill='#6c63ff'],
-.question--1 .question__svg circle[fill='#6c63ff'] {
+.question--1 .question__bar {
   fill: #20a08b;
 }
 
-.question--2 .question__svg path[fill='#6c63ff'],
-.question--2 .question__svg rect[fill='#6c63ff'],
-.question--2 .question__svg circle[fill='#6c63ff'] {
+.question--2 .question__bar {
   fill: #fcb332;
 }
 
-.question--3 .question__svg path[fill='#6c63ff'],
-.question--3 .question__svg rect[fill='#6c63ff'],
-.question--3 .question__svg circle[fill='#6c63ff'] {
+.question--3 .question__bar {
   fill: #4834ae;
 }
 
@@ -742,7 +736,7 @@ button:focus {
   height: 0.125rem;
   width: 25%;
   background-color: #384160;
-  margin: 3.5% auto 3.5% auto;
+  margin: 3.5% auto;
 }
 
 .sm__form-group:not(:last-of-type) {

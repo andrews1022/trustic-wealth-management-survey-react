@@ -1,28 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+// context
+import { FormContext } from './../App';
+
+// animations
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeInOut } from './../animations/Animations';
 
-const Nav = ({ openSimpleModal, openIntroductoryCallModal }) => {
+const Nav = () => {
+	const formContext = useContext(FormContext);
+
 	return (
-		<AnimatePresence>
-			<motion.nav
-				variants={fadeInOut}
-				initial='hidden'
-				animate='show'
-				exit='exit'
-				key='nav'
-				className='nav'
-			>
-				<ul className='nav__list'>
-					<li className='nav__item' onClick={openIntroductoryCallModal}>
-						Book an introductory call
-					</li>
-					<li className='nav__item' onClick={openSimpleModal} data-simple-modal-opener='nav'>
-						Sign up for future retirement insights
-					</li>
-				</ul>
-			</motion.nav>
-		</AnimatePresence>
+		<nav className='nav'>
+			<ul className='nav__list'>
+				<li
+					className='nav__item'
+					onClick={() => formContext.formDispatch({ type: 'OPEN_INTRODUCTORY_CALL_MODAL' })}
+				>
+					Book an introductory call
+				</li>
+				<li
+					className='nav__item'
+					onClick={() =>
+						formContext.formDispatch({
+							type: 'OPEN_SIMPLE_MODAL',
+							text: 'Sign Up and Stay Informed'
+						})
+					}
+					data-simple-modal-opener='nav'
+				>
+					Sign up for future retirement insights
+				</li>
+			</ul>
+		</nav>
 	);
 };
 

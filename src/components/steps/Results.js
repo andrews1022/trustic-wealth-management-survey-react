@@ -8,7 +8,7 @@ const Results = ({ checkedOptions, openSimpleModal, openIntroductoryCallModal })
 	const wasSelected = (option) => (checkedOptions.indexOf(option.id) > -1 ? 'selected' : '');
 
 	return (
-		<motion.div variants={fadeIn} initial='hidden' animate='show' key='results' className='results'>
+		<div className='results'>
 			<div className='results__inner'>
 				<div className='results__hero-text'>
 					<h2 className='results__heading'>See how your answers align with other Canadians.</h2>
@@ -94,7 +94,7 @@ const Results = ({ checkedOptions, openSimpleModal, openIntroductoryCallModal })
 				openSimpleModal={openSimpleModal}
 				openIntroductoryCallModal={openIntroductoryCallModal}
 			/>
-		</motion.div>
+		</div>
 	);
 };
 

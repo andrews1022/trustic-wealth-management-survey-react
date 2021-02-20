@@ -91,11 +91,55 @@ const QuestionSVG = () => {
 				transform='translate(-153.44148 -81.375)'
 				opacity='0.2'
 			/>
-			<rect x='159' y='413' width='60' height='158' rx='11.85052' fill='#6c63ff' />
-			<rect x='273' y='318' width='60' height='253' rx='11.85052' fill='#6c63ff' />
-			<rect x='387' y='252' width='60' height='319' rx='11.85052' fill='#6c63ff' />
-			<rect x='501' y='189' width='60' height='382' rx='11.85052' fill='#6c63ff' />
-			<rect x='615' y='79' width='60' height='492' rx='11.85052' fill='#6c63ff' />
+
+			{/* start of bars that have their colors adjusted */}
+			<rect
+				className='question__bar'
+				x='159'
+				y='413'
+				width='60'
+				height='158'
+				rx='11.85052'
+				fill='#6c63ff'
+			/>
+			<rect
+				className='question__bar'
+				x='273'
+				y='318'
+				width='60'
+				height='253'
+				rx='11.85052'
+				fill='#6c63ff'
+			/>
+			<rect
+				className='question__bar'
+				x='387'
+				y='252'
+				width='60'
+				height='319'
+				rx='11.85052'
+				fill='#6c63ff'
+			/>
+			<rect
+				className='question__bar'
+				x='501'
+				y='189'
+				width='60'
+				height='382'
+				rx='11.85052'
+				fill='#6c63ff'
+			/>
+			<rect
+				className='question__bar'
+				x='615'
+				y='79'
+				width='60'
+				height='492'
+				rx='11.85052'
+				fill='#6c63ff'
+			/>
+			{/* end of bars that have their colors adjusted */}
+
 			<rect
 				x='167'
 				y='405'

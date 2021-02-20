@@ -6,7 +6,7 @@ const Intro = () => {
 			id='02a143c3-6017-4373-a226-06a05c845178'
 			data-name='Layer 1'
 			xmlns='http://www.w3.org/2000/svg'
-			xmlns:xlink='http://www.w3.org/1999/xlink'
+			xmlnsXlink='http://www.w3.org/1999/xlink'
 			width='954'
 			height='549.86'
 			viewBox='0 0 954 549.86'
@@ -20,9 +20,9 @@ const Intro = () => {
 					y2='230.62'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop offset='0' stop-color='gray' stop-opacity='0.25' />
-					<stop offset='0.54' stop-color='gray' stop-opacity='0.12' />
-					<stop offset='1' stop-color='gray' stop-opacity='0.1' />
+					<stop offset='0' stopColor='gray' stopOpacity='0.25' />
+					<stop offset='0.54' stopColor='gray' stopOpacity='0.12' />
+					<stop offset='1' stopColor='gray' stopOpacity='0.1' />
 				</linearGradient>
 				<linearGradient
 					id='618658e0-5682-4211-900b-639feb09c488'
@@ -30,7 +30,7 @@ const Intro = () => {
 					y1='643.77'
 					x2='878.33'
 					y2='175.07'
-					xlink:href='#6beaf3f8-3e45-4d0f-940e-4f825d2ab248'
+					xlinkHref='#6beaf3f8-3e45-4d0f-940e-4f825d2ab248'
 				/>
 			</defs>
 			<title>finance</title>
@@ -50,7 +50,7 @@ const Intro = () => {
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M1040.15,437.56c12.38,45.27-40.43,174.24-40.43,174.24S888.6,527.67,876.21,482.4a85,85,0,1,1,163.93-44.85Z'
@@ -67,7 +67,7 @@ const Intro = () => {
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M1057.8,520.3s-62.72-34.12-54.78,91.83c0,0,52.32-1.87,70.89-44.55a37,37,0,0,0-15.19-46.75Z'
@@ -79,7 +79,7 @@ const Intro = () => {
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M139.56,506.26s-61.14,36.88,51.56,93.67c0,0,24.83-46.1-2.62-83.69a37,37,0,0,0-48-10.52Z'
@@ -91,7 +91,7 @@ const Intro = () => {
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M902.43,554.27H838.18a21.42,21.42,0,0,0,2.24-9.57V252.14a21.51,21.51,0,0,0-21.51-21.51H321.58a21.51,21.51,0,0,0-21.51,21.51V544.71a21.42,21.42,0,0,0,2.24,9.57H235.79A5.69,5.69,0,0,0,230.1,560v4.59a31.82,31.82,0,0,0,31.82,31.82H876.3a31.82,31.82,0,0,0,31.82-31.82V560A5.69,5.69,0,0,0,902.43,554.27Zm-395.89,18.2L501,566.22H637.78l-6.1,6.26Z'
@@ -118,8 +118,8 @@ const Intro = () => {
 				points='258.77 124.19 258.77 352.11 635.67 352.11'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<rect x='292.12' y='283.18' width='38.91' height='60.04' fill='#4834ae' opacity='0.5' />
 			<rect x='358.83' y='229.81' width='38.91' height='113.41' fill='#4834ae' opacity='0.7' />
@@ -130,8 +130,8 @@ const Intro = () => {
 				points='311.02 246.49 378.84 185.34 445.55 243.15 511.15 173.11 577.86 145.31'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<circle cx='311.02' cy='246.49' r='7.78' fill='#4834ae' />
 			<circle cx='444.44' cy='242.04' r='7.78' fill='#4834ae' />
@@ -270,8 +270,8 @@ const Intro = () => {
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<circle cx='82.69' cy='141.7' r='7.23' fill='#4834ae' />
 			<path
@@ -279,72 +279,72 @@ const Intro = () => {
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<path
 				d='M192.21,367.4s-16.35-18.09-15.45-28.94'
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<path
 				d='M190.82,400.54s14.87,3.92,28.44-25'
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<path
 				d='M194.79,424.64s-37-23.81-32.49-39.17'
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<path
 				d='M200.57,451.89s25.92-23,23.21-45.63'
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<path
 				d='M203.39,467.91s-33-9.22-32-23.68'
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<path
 				d='M205.69,487s20.79-19.26,23.5-31'
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<path
 				d='M207.14,519.75s-21.33-24.9-22.24-37.55'
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<path
 				d='M207.14,540.36s23.87-26.52,25.67-39.17'
 				transform='translate(-123 -175.07)'
 				fill='none'
 				stroke='#535461'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<circle cx='53.76' cy='165.2' r='7.23' fill='#4834ae' />
 			<circle cx='45.63' cy='269.16' r='7.23' fill='#4834ae' />

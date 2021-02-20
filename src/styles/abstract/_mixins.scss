@@ -17,12 +17,8 @@
 }
 
 @mixin questionSvgColor($color) {
-	.question__svg {
-		path[fill='#6c63ff'],
-		rect[fill='#6c63ff'],
-		circle[fill='#6c63ff'] {
-			fill: $color;
-		}
+	.question__bar {
+		fill: $color;
 	}
 }
 

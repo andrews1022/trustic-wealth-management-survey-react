@@ -1,4 +1,3 @@
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import React, { createContext, useReducer } from 'react';
 import MasterForm from './components/MasterForm';
 import './styles/app.min.css';
@@ -11,7 +10,8 @@ const initialFormState = {
 	isSimpleModalOpen: false,
 	isIntroductoryCallModalOpen: false,
 	simpleModalHeadingText: '',
-	checkedOptions: []
+	checkedOptions: [],
+	formIsSubmitted: false
 };
 
 const formReducer = (state, action) => {
@@ -27,6 +27,31 @@ const formReducer = (state, action) => {
 				...state,
 				currentStep: state.currentStep + 1,
 				currentQuestion: state.currentQuestion + 1
+			};
+
+		case 'OPEN_SIMPLE_MODAL':
+			return {
+				...state,
+				isSimpleModalOpen: true,
+				simpleModalHeadingText: action.text
+			};
+
+		case 'CLOSE_SIMPLE_MODAL':
+			return {
+				...state,
+				isSimpleModalOpen: false
+			};
+
+		case 'OPEN_INTRODUCTORY_CALL_MODAL':
+			return {
+				...state,
+				isIntroductoryCallModalOpen: true
+			};
+
+		case 'CLOSE_INTRODUCTORY_CALL_MODAL':
+			return {
+				...state,
+				isIntroductoryCallModalOpen: false
 			};
 
 		default:

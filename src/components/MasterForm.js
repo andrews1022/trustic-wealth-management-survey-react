@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+
+// context
+import { FormContext } from './../App';
 
 // components
 import Nav from './Nav';
@@ -15,6 +18,10 @@ import IntroductoryCallModal from './modals/IntroductoryCallModal';
 import SimpleModal from './modals/SimpleModal';
 
 const MasterForm = () => {
+	// context
+	const formContext = useContext(FormContext);
+	console.log(formContext);
+
 	const [currentStep, setCurrentStep] = useState(0);
 	const [currentQuestion, setCurrentQuestion] = useState(1);
 	const [isSimpleModalOpen, setIsSimpleModalOpen] = useState(false);
@@ -47,66 +54,40 @@ const MasterForm = () => {
 
 		setIsSimpleModalOpen(true);
 	};
+
 	const closeSimpleModal = () => setIsSimpleModalOpen(false);
 	const openIntroductoryCallModal = () => setIsIntroductoryCallModalOpen(true);
 	const closeIntroductoryCallModal = () => setIsIntroductoryCallModalOpen(false);
 
 	// handle adding/removing clicked options from state array
 	const handleCheckedOptions = (e) => {
+		// get id of clicked element
 		const elementId = e.target.id;
 
-		if (checkedOptions.indexOf(elementId) !== -1) {
+		// if checked option is not found in checkedOptions state...
+		if (checkedOptions.indexOf(elementId) === -1) {
+			// add it
+			setCheckedOptions(checkedOptions.concat(elementId));
+		} else {
 			// remove if already in array
 			setCheckedOptions(checkedOptions.filter((option) => option !== elementId));
-		} else {
-			// add it otherwise
-			setCheckedOptions(checkedOptions.concat(elementId));
 		}
 	};
 
-	if (currentStep !== 4) {
+	if (formContext.formState.currentStep !== 4) {
 		return (
 			<div className='master-form'>
-				<Nav
-					openSimpleModal={openSimpleModal}
-					openIntroductoryCallModal={openIntroductoryCallModal}
-				/>
+				<Nav />
 
 				<div className='master-form__inner'>
-					<Intro
-						currentStep={currentStep}
-						onClickHandler={incremenetCurrentStep}
-						openSimpleModal={openSimpleModal}
-					/>
-					<Question1
-						currentStep={currentStep}
-						currentQuestion={currentQuestion}
-						onClickHandler={incrementCurrentStepAndCurrentQuestion}
-						handleCheckedOptions={handleCheckedOptions}
-					/>
-					<Question2
-						currentStep={currentStep}
-						currentQuestion={currentQuestion}
-						onClickHandler={incrementCurrentStepAndCurrentQuestion}
-						handleCheckedOptions={handleCheckedOptions}
-					/>
-					<Question3
-						currentStep={currentStep}
-						currentQuestion={currentQuestion}
-						onClickHandler={incremenetCurrentStep}
-						handleCheckedOptions={handleCheckedOptions}
-					/>
+					<Intro />
+					<Question1 handleCheckedOptions={handleCheckedOptions} />
+					<Question2 handleCheckedOptions={handleCheckedOptions} />
+					<Question3 handleCheckedOptions={handleCheckedOptions} />
 				</div>
 
-				<SimpleModal
-					isSimpleModalOpen={isSimpleModalOpen}
-					closeSimpleModal={closeSimpleModal}
-					simpleModalHeadingText={simpleModalHeadingText}
-				/>
-				<IntroductoryCallModal
-					isIntroductoryCallModalOpen={isIntroductoryCallModalOpen}
-					closeIntroductoryCallModal={closeIntroductoryCallModal}
-				/>
+				<SimpleModal />
+				<IntroductoryCallModal />
 			</div>
 		);
 	} else {
@@ -117,15 +98,8 @@ const MasterForm = () => {
 					openSimpleModal={openSimpleModal}
 					openIntroductoryCallModal={openIntroductoryCallModal}
 				/>
-				<SimpleModal
-					isSimpleModalOpen={isSimpleModalOpen}
-					closeSimpleModal={closeSimpleModal}
-					simpleModalHeadingText={simpleModalHeadingText}
-				/>
-				<IntroductoryCallModal
-					isIntroductoryCallModalOpen={isIntroductoryCallModalOpen}
-					closeIntroductoryCallModal={closeIntroductoryCallModal}
-				/>
+				<SimpleModal />
+				<IntroductoryCallModal />
 			</div>
 		);
 	}
