@@ -3,10 +3,6 @@ import React, { useContext } from 'react';
 // context
 import { FormContext } from './../../App';
 
-// animations
-import { motion, AnimatePresence } from 'framer-motion';
-import { fadeIn, modalContentSwitch } from './../../animations/Animations';
-
 // modal
 import Modal from 'react-modal';
 import ThankYou from './ThankYou';
