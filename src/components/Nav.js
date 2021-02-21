@@ -3,10 +3,6 @@ import React, { useContext } from 'react';
 // context
 import { FormContext } from './../App';
 
-// animations
-import { motion, AnimatePresence } from 'framer-motion';
-import { fadeInOut } from './../animations/Animations';
-
 const Nav = () => {
 	const formContext = useContext(FormContext);
 
@@ -27,7 +23,6 @@ const Nav = () => {
 							text: 'Sign Up and Stay Informed'
 						})
 					}
-					data-simple-modal-opener='nav'
 				>
 					Sign up for future retirement insights
 				</li>

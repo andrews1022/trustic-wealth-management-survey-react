@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+// context
+import { FormContext } from './../App';
+
+// font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
+
+// logo
 import TrusticLogo from './../images/trustic-logo.png';
 
-const Footer = ({ openSimpleModal, openIntroductoryCallModal }) => {
+const Footer = () => {
+	// context
+	const formContext = useContext(FormContext);
+
 	return (
 		<footer className='footer'>
 			<div className='footer__row'>
@@ -13,15 +23,19 @@ const Footer = ({ openSimpleModal, openIntroductoryCallModal }) => {
 				<div className='footer__box'>
 					<button
 						className='footer__button button button--hollow button--small'
-						onClick={openSimpleModal}
-						data-simple-modal-opener='footer'
+						onClick={() =>
+							formContext.formDispatch({
+								type: 'OPEN_SIMPLE_MODAL',
+								text: 'Download the Survey Results'
+							})
+						}
 					>
 						<FontAwesomeIcon className='footer__icon' icon={faDownload} />
 						Download Complete Survey
 					</button>
 					<button
 						className='footer__button button button--solid button--small'
-						onClick={openIntroductoryCallModal}
+						onClick={() => formContext.formDispatch({ type: 'OPEN_INTRODUCTORY_CALL_MODAL' })}
 					>
 						<FontAwesomeIcon className='footer__icon' icon={faPhoneVolume} />
 						Book an Introductory Call

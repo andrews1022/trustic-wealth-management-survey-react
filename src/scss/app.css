@@ -720,6 +720,11 @@ button:focus {
   background-color: #fcb332;
 }
 
+.results__button {
+  display: block;
+  margin: 0 auto;
+}
+
 .sm__logo {
   margin: 0 auto;
   width: 15rem;

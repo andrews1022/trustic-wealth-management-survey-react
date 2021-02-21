@@ -3,10 +3,6 @@ import React, { useContext } from 'react';
 // context
 import { FormContext } from './../../App';
 
-// animations
-import { motion, AnimatePresence } from 'framer-motion';
-import { fadeInOut } from './../../animations/Animations';
-
 // svg
 import IntroSVG from './../svgs/IntroSVG';
 
@@ -40,7 +36,6 @@ const Intro = () => {
 											text: 'Download the Survey Results'
 										})
 									}
-									data-simple-modal-opener='intro'
 								>
 									Download Survey Results
 								</button>

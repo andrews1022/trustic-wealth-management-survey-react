@@ -7,7 +7,7 @@ import { FormContext } from './../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-const ThankYou = ({ closeModalType }) => {
+const ThankYou = ({ modalType }) => {
 	const formContext = useContext(FormContext);
 
 	return (
@@ -15,7 +15,7 @@ const ThankYou = ({ closeModalType }) => {
 			<FontAwesomeIcon
 				className='ty__icon'
 				icon={faTimesCircle}
-				onClick={() => formContext.formDispatch({ type: `CLOSE_${closeModalType}_MODAL` })}
+				onClick={() => formContext.formDispatch({ type: `CLOSE_${modalType}_MODAL` })}
 			/>
 			<h2 className='ty__heading'>Thank you for submitting your email!</h2>
 		</div>

@@ -25,19 +25,15 @@ const IntroductoryCallModal = () => {
 	// context
 	const formContext = useContext(FormContext);
 
-	// state
-	const [formIsSubmitted, setFormIsSubmitted] = useState(false);
+	// state (needed for react date & time pickers)
 	const [date, setDate] = useState(new Date());
 	const [time, setTime] = useState(new Date());
 
 	// switch content inside modal based on whether form was submitted or not
 	const formSubmitHandler = (e) => {
 		e.preventDefault();
-		setFormIsSubmitted(true);
+		formContext.formDispatch({ type: 'FORM_IS_SUBMITTED' });
 	};
-
-	// reset state back to false when closing the modal so the user can fill out the form again
-	const resetModalContent = () => setFormIsSubmitted(false);
 
 	// update date when modal is opened
 	useEffect(() => {
@@ -59,12 +55,12 @@ const IntroductoryCallModal = () => {
 			isOpen={formContext.formState.isIntroductoryCallModalOpen}
 			contentLabel='Simple Contact Form'
 			onRequestClose={() => formContext.formDispatch({ type: 'CLOSE_INTRODUCTORY_CALL_MODAL' })}
-			onAfterClose={resetModalContent}
+			onAfterClose={() => formContext.formDispatch({ type: 'FORM_IS_NOT_SUBMITTED' })}
 			ariaHideApp={false}
 			closeTimeoutMS={500}
 			className='icm'
 		>
-			{formIsSubmitted === false ? (
+			{!formContext.formState.formIsSubmitted ? (
 				<div className='icm__inner'>
 					<img className='icm__logo' src={Logo} alt='Trustic Logo' />
 					<div className='icm__divider'></div>
@@ -145,7 +141,7 @@ const IntroductoryCallModal = () => {
 				</div>
 			) : (
 				<div className='icm__ty'>
-					<ThankYou closeModalType='INTRODUCTORY_CALL' />
+					<ThankYou modalType='INTRODUCTORY_CALL' />
 				</div>
 			)}
 		</Modal>

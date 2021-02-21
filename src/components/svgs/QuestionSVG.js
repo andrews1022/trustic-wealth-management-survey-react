@@ -24,7 +24,7 @@ const QuestionSVG = () => {
 				ry='24'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M958.04692,536.82505a15.5288,15.5288,0,1,0,2.068-29.78188l.38869,7.99268-3.78149-6.8498a15.47025,15.47025,0,0,0-7.97138,8.74657,15.227,15.227,0,0,0-.89321,4.2006A15.52584,15.52584,0,0,0,958.04692,536.82505Z'
@@ -36,14 +36,14 @@ const QuestionSVG = () => {
 				transform='translate(-153.44148 -81.375)'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M958.68644,534.76727a15.5288,15.5288,0,1,0,2.068-29.78187l.38868,7.99267-3.78148-6.84979a15.4702,15.4702,0,0,0-7.97138,8.74656,15.22718,15.22718,0,0,0-.89321,4.2006A15.52583,15.52583,0,0,0,958.68644,534.76727Z'
 				transform='translate(-153.44148 -81.375)'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M974.85982,490.59386a15.51068,15.51068,0,0,1,11.177-9.84713l1.27857,7.59841,2.37047-7.98034a15.52689,15.52689,0,1,1-14.826,10.22906Z'
@@ -55,7 +55,7 @@ const QuestionSVG = () => {
 				transform='translate(-153.44148 -81.375)'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M986.49448,572.68a15.52693,15.52693,0,0,0,13.743-27.62365L998.416,551.189l-1.29158-7.688a.2711.2711,0,0,0-.03953-.015,15.52776,15.52776,0,1,0-10.59039,29.194Z'
@@ -67,7 +67,7 @@ const QuestionSVG = () => {
 				transform='translate(-153.44148 -81.375)'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M970.32819,598.46815a15.52044,15.52044,0,1,0,2.99241-12.15992l6.91859,10.41337-9.4534-5.52709A15.38252,15.38252,0,0,0,970.32819,598.46815Z'
@@ -79,7 +79,7 @@ const QuestionSVG = () => {
 				transform='translate(-153.44148 -81.375)'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M955.19813,638.73381s13.703-5.37011,17.83272-8.31084,21.07864-6.45212,22.10312-1.73584,20.593,23.45665,5.12244,23.58144-35.94679,2.53829-40.06857.02754S955.19813,638.73381,955.19813,638.73381Z'
@@ -148,7 +148,7 @@ const QuestionSVG = () => {
 				rx='11.85052'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<rect
 				x='281'
@@ -158,7 +158,7 @@ const QuestionSVG = () => {
 				rx='11.85052'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<rect
 				x='395'
@@ -168,7 +168,7 @@ const QuestionSVG = () => {
 				rx='11.85052'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<rect
 				x='509'
@@ -178,7 +178,7 @@ const QuestionSVG = () => {
 				rx='11.85052'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<rect
 				x='623'
@@ -188,9 +188,9 @@ const QuestionSVG = () => {
 				rx='11.85052'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
-			<line x1='861' y1='571.5' y2='571.5' fill='none' stroke='#3f3d56' stroke-miterlimit='10' />
+			<line x1='861' y1='571.5' y2='571.5' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
 			<path
 				d='M960.14462,556.951s9.41086,33.87907-2.50956,38.89819-8.15607-37.64341-8.15607-37.64341Z'
 				transform='translate(-153.44148 -81.375)'
@@ -266,18 +266,18 @@ const QuestionSVG = () => {
 				points='196.5 344.5 310.5 249.5 425.5 184.5 539.5 121.5 653.5 11.5'
 				fill='none'
 				stroke='#3f3d56'
-				stroke-miterlimit='10'
+				strokeMiterlimit='10'
 			/>
 			<circle cx='193.5' cy='349.5' r='11' fill='#f2f2f2' />
 			<circle cx='307.5' cy='254.5' r='11' fill='#f2f2f2' />
 			<circle cx='422.5' cy='189.5' r='11' fill='#f2f2f2' />
 			<circle cx='536.5' cy='126.5' r='11' fill='#f2f2f2' />
 			<circle cx='650.5' cy='16.5' r='11' fill='#f2f2f2' />
-			<circle cx='196.5' cy='344.5' r='11' fill='none' stroke='#3f3d56' stroke-miterlimit='10' />
-			<circle cx='310.5' cy='249.5' r='11' fill='none' stroke='#3f3d56' stroke-miterlimit='10' />
-			<circle cx='425.5' cy='184.5' r='11' fill='none' stroke='#3f3d56' stroke-miterlimit='10' />
-			<circle cx='539.5' cy='121.5' r='11' fill='none' stroke='#3f3d56' stroke-miterlimit='10' />
-			<circle cx='653.5' cy='11.5' r='11' fill='none' stroke='#3f3d56' stroke-miterlimit='10' />
+			<circle cx='196.5' cy='344.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
+			<circle cx='310.5' cy='249.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
+			<circle cx='425.5' cy='184.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
+			<circle cx='539.5' cy='121.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
+			<circle cx='653.5' cy='11.5' r='11' fill='none' stroke='#3f3d56' strokeMiterlimit='10' />
 		</svg>
 	);
 };

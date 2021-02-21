@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 // context
 import { FormContext } from './../../App';
@@ -18,29 +18,23 @@ const SimpleModal = () => {
 	// context
 	const formContext = useContext(FormContext);
 
-	// state
-	const [formIsSubmitted, setFormIsSubmitted] = useState(false);
-
 	// switch content inside modal based on whether form was submitted or not
 	const formSubmitHandler = (e) => {
 		e.preventDefault();
-		setFormIsSubmitted(true);
+		formContext.formDispatch({ type: 'FORM_IS_SUBMITTED' });
 	};
-
-	// reset state back to false when closing the modal so the user can fill out the form again
-	const resetModalContent = () => setFormIsSubmitted(false);
 
 	return (
 		<Modal
 			isOpen={formContext.formState.isSimpleModalOpen}
 			contentLabel='Simple Contact Form'
 			onRequestClose={() => formContext.formDispatch({ type: 'CLOSE_SIMPLE_MODAL' })}
-			onAfterClose={resetModalContent}
+			onAfterClose={() => formContext.formDispatch({ type: 'FORM_IS_NOT_SUBMITTED' })}
 			ariaHideApp={false}
 			closeTimeoutMS={500}
 			className='sm'
 		>
-			{formIsSubmitted === false ? (
+			{!formContext.formState.formIsSubmitted ? (
 				<div className='sm__inner'>
 					<img className='sm__logo' src={Logo} alt='Trustic Logo' />
 					<h2 className='sm__heading'>{formContext.formState.simpleModalHeadingText}</h2>
@@ -86,7 +80,7 @@ const SimpleModal = () => {
 				</div>
 			) : (
 				<div className='sm__thank-you'>
-					<ThankYou closeModalType='SIMPLE' />
+					<ThankYou modalType='SIMPLE' />
 				</div>
 			)}
 		</Modal>

@@ -3,17 +3,13 @@ import React, { useContext } from 'react';
 // context
 import { FormContext } from './../../App';
 
-// animations
-import { motion, AnimatePresence } from 'framer-motion';
-import { fadeInOut } from './../../animations/Animations';
-
 // data
 import { titles, options } from './../../data/data';
 
 // svg
 import QuestionSVG from './../svgs/QuestionSVG';
 
-const Question2 = ({ handleCheckedOptions }) => {
+const Question2 = () => {
 	const formContext = useContext(FormContext);
 
 	return (
@@ -38,7 +34,17 @@ const Question2 = ({ handleCheckedOptions }) => {
 													className='question__checkbox'
 													type='checkbox'
 													id={option.id}
-													onChange={handleCheckedOptions}
+													onChange={(e) =>
+														formContext.formDispatch({
+															type: 'OPTION_CHECKED',
+															id:
+																formContext.formState.checkedOptions.indexOf(e.target.id) === -1
+																	? formContext.formState.checkedOptions.concat(e.target.id)
+																	: formContext.formState.checkedOptions.filter(
+																			(option) => option !== e.target.id
+																	  )
+														})
+													}
 												/>
 												<label className='question__label' htmlFor={option.id}>
 													{option.questionText}

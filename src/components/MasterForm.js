@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 // context
 import { FormContext } from './../App';
@@ -17,92 +17,52 @@ import Results from './steps/Results';
 import IntroductoryCallModal from './modals/IntroductoryCallModal';
 import SimpleModal from './modals/SimpleModal';
 
+// animations
+import { motion } from 'framer-motion';
+import { fadeInOut } from './../animations/Animations';
+
 const MasterForm = () => {
 	// context
 	const formContext = useContext(FormContext);
-	console.log(formContext);
 
-	const [currentStep, setCurrentStep] = useState(0);
-	const [currentQuestion, setCurrentQuestion] = useState(1);
-	const [isSimpleModalOpen, setIsSimpleModalOpen] = useState(false);
-	const [isIntroductoryCallModalOpen, setIsIntroductoryCallModalOpen] = useState(false);
-	const [simpleModalHeadingText, setSimpleModalHeadingText] = useState('');
-	const [checkedOptions, setCheckedOptions] = useState([]);
+	return (
+		<>
+			{formContext.formState.currentStep !== 4 ? (
+				<div className='master-form'>
+					<Nav />
 
-	// increment current step
-	const incremenetCurrentStep = () => {
-		setCurrentStep(currentStep + 1);
-	};
+					<motion.div
+						variants={fadeInOut}
+						initial='hidden'
+						animate='show'
+						exit='exit'
+						key={formContext.formState.currentStep}
+						className='master-form__inner'
+					>
+						<Intro />
+						<Question1 />
+						<Question2 />
+						<Question3 />
+					</motion.div>
 
-	// increment current step and question#
-	const incrementCurrentStepAndCurrentQuestion = () => {
-		setCurrentStep(currentStep + 1);
-		setCurrentQuestion(currentQuestion + 1);
-	};
-
-	// modal functions
-	const openSimpleModal = (e) => {
-		const opener = e.target.dataset.simpleModalOpener;
-
-		if (opener === 'nav') {
-			setSimpleModalHeadingText('Sign Up and Stay Informed');
-		} else if (opener === 'intro' || opener === 'footer') {
-			setSimpleModalHeadingText('Download the Survey Results');
-		} else {
-			setSimpleModalHeadingText('Sign Up and Stay Informed');
-		}
-
-		setIsSimpleModalOpen(true);
-	};
-
-	const closeSimpleModal = () => setIsSimpleModalOpen(false);
-	const openIntroductoryCallModal = () => setIsIntroductoryCallModalOpen(true);
-	const closeIntroductoryCallModal = () => setIsIntroductoryCallModalOpen(false);
-
-	// handle adding/removing clicked options from state array
-	const handleCheckedOptions = (e) => {
-		// get id of clicked element
-		const elementId = e.target.id;
-
-		// if checked option is not found in checkedOptions state...
-		if (checkedOptions.indexOf(elementId) === -1) {
-			// add it
-			setCheckedOptions(checkedOptions.concat(elementId));
-		} else {
-			// remove if already in array
-			setCheckedOptions(checkedOptions.filter((option) => option !== elementId));
-		}
-	};
-
-	if (formContext.formState.currentStep !== 4) {
-		return (
-			<div className='master-form'>
-				<Nav />
-
-				<div className='master-form__inner'>
-					<Intro />
-					<Question1 handleCheckedOptions={handleCheckedOptions} />
-					<Question2 handleCheckedOptions={handleCheckedOptions} />
-					<Question3 handleCheckedOptions={handleCheckedOptions} />
+					<SimpleModal />
+					<IntroductoryCallModal />
 				</div>
-
-				<SimpleModal />
-				<IntroductoryCallModal />
-			</div>
-		);
-	} else {
-		return (
-			<div>
-				<Results
-					checkedOptions={checkedOptions}
-					openSimpleModal={openSimpleModal}
-					openIntroductoryCallModal={openIntroductoryCallModal}
-				/>
-				<SimpleModal />
-				<IntroductoryCallModal />
-			</div>
-		);
-	}
+			) : (
+				<motion.div
+					variants={fadeInOut}
+					initial='hidden'
+					animate='show'
+					exit='exit'
+					key={formContext.formState.currentStep}
+				>
+					<Results />
+					<SimpleModal />
+					<IntroductoryCallModal />
+				</motion.div>
+			)}
+		</>
+	);
 };
 
 export default MasterForm;

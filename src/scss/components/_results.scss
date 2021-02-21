@@ -172,4 +172,9 @@
 			background-color: $supernova;
 		}
 	}
+
+	&__button {
+		display: block;
+		margin: $marginCenter;
+	}
 }

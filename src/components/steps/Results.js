@@ -1,11 +1,22 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useContext } from 'react';
+
+// context
+import { FormContext } from './../../App';
+
+// components
 import Footer from './../Footer';
-import { fadeIn } from './../../animations/Animations';
+
+// data
 import { titles, options } from './../../data/data';
 
-const Results = ({ checkedOptions, openSimpleModal, openIntroductoryCallModal }) => {
-	const wasSelected = (option) => (checkedOptions.indexOf(option.id) > -1 ? 'selected' : '');
+const Results = () => {
+	// context
+	const formContext = useContext(FormContext);
+
+	// find the options that were selected
+	// for any that were, return string of 'selected' (used for styling)
+	const wasSelected = (option) =>
+		formContext.formState.checkedOptions.indexOf(option.id) > -1 ? 'selected' : '';
 
 	return (
 		<div className='results'>
@@ -90,10 +101,19 @@ const Results = ({ checkedOptions, openSimpleModal, openIntroductoryCallModal })
 				</div>
 			</div>
 
-			<Footer
-				openSimpleModal={openSimpleModal}
-				openIntroductoryCallModal={openIntroductoryCallModal}
-			/>
+			<div className='results__divider'></div>
+
+			<div>
+				<h3 className='results__answers-heading'>Would you like to take the survey again?</h3>
+				<button
+					className='results__button button button--hollow button--small'
+					onClick={() => formContext.formDispatch({ type: 'RESTART_SURVEY' })}
+				>
+					Take Survey Again
+				</button>
+			</div>
+
+			<Footer />
 		</div>
 	);
 };
